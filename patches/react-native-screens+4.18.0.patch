@@ -1,0 +1,17 @@
+diff --git a/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/safearea/SafeAreaView.kt b/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/safearea/SafeAreaView.kt
+index cb31893..e60ced4 100644
+--- a/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/safearea/SafeAreaView.kt
++++ b/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/safearea/SafeAreaView.kt
+@@ -105,9 +105,10 @@ class SafeAreaView(
+     ): WindowInsetsCompat {
+         val newSystemInsets =
+             insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout())
++        val newSystemEdgeInsets = EdgeInsets.fromInsets(newSystemInsets)
+ 
+-        if (newSystemInsets != currentSystemInsets) {
+-            currentSystemInsets = EdgeInsets.fromInsets(newSystemInsets)
++        if (newSystemEdgeInsets != currentSystemInsets) {
++            currentSystemInsets = newSystemEdgeInsets
+ 
+             if (insetType.containsSystem()) {
+                 needsInsetsUpdate = true
