@@ -1,1 +1,0 @@
-/home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/intermediates/cxx/Debug/3c4s1l18/obj/arm64-v8a

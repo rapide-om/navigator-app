@@ -1,11 +1,20 @@
 import React from 'react';
-import Config from 'react-native-config';
+import { APP_NAME, APP_IDENTIFIER, APP_LINK_PREFIX, FLEETBASE_HOST, FLEETBASE_KEY, GOOGLE_MAPS_API_KEY } from '@env';
 import { SafeAreaView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faExclamationTriangle, faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { translate } from '../utils/localize';
 import { Stack, YStack, XStack, Text, useTheme } from 'tamagui';
 import { useLanguage } from '../contexts/LanguageContext';
+
+const Config = {
+    APP_NAME,
+    APP_IDENTIFIER,
+    APP_LINK_PREFIX,
+    FLEETBASE_HOST,
+    FLEETBASE_KEY,
+    GOOGLE_MAPS_API_KEY,
+};
 
 const keyMissing = (key: string) => !Config[key];
 

@@ -1,10 +1,19 @@
-import React, { createContext, useState, useContext, useEffect, useMemo, useCallback, ReactNode } from 'react';
-import Env from 'react-native-config';
+import { createContext, ReactNode, useCallback, useContext, useMemo } from 'react';
+import { APP_NAME, APP_IDENTIFIER, APP_LINK_PREFIX, FLEETBASE_HOST, FLEETBASE_KEY, GOOGLE_MAPS_API_KEY } from '@env';
 import Config from '../../navigator.config';
-import { navigatorConfig, config, toBoolean, get } from '../utils';
 import useStorage from '../hooks/use-storage';
+import { config, get, navigatorConfig, toBoolean } from '../utils';
 
-const ConfigContext = createContext();
+const Env = {
+    APP_NAME,
+    APP_IDENTIFIER,
+    APP_LINK_PREFIX,
+    FLEETBASE_HOST,
+    FLEETBASE_KEY,
+    GOOGLE_MAPS_API_KEY,
+};
+
+const ConfigContext = createContext<any>(undefined);
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     const [instanceLinkedFleetbaseHost, setInstanceLinkedFleetbaseHost] = useStorage('INSTANCE_LINK_FLEETBASE_HOST');
@@ -12,6 +21,8 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     const [instanceLinkedSocketclusterHost, setInstanceLinkedSocketclusterHost] = useStorage('INSTANCE_LINK_SOCKETCLUSTER_HOST');
     const [instanceLinkedSocketclusterPort, setInstanceLinkedSocketclusterPort] = useStorage('INSTANCE_LINK_SOCKETCLUSTER_PORT');
     const [instanceLinkedSocketclusterSecure, setInstanceLinkedSocketclusterSecure] = useStorage('INSTANCE_LINK_SOCKETCLUSTER_SECURE');
+    console.log('Env FLEETBASE_KEY:', FLEETBASE_KEY);
+    console.log('Env FLEETBASE_HOST:', FLEETBASE_HOST);
 
     const setInstanceLinkConfig = useCallback(
         (key, value) => {
@@ -76,7 +87,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     );
 
     const value = useMemo(() => {
-        return {
+        const contextValue = {
             ...Config,
             ...Env,
             navigatorConfig,
@@ -92,6 +103,12 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
             setInstanceLinkConfig,
             clearInstanceLinkConfig,
         };
+        console.log('[ConfigContext] Context value created:', {
+            hasNavigatorConfig: !!contextValue.navigatorConfig,
+            hasConfig: !!contextValue.config,
+            envKeys: Object.keys(Env)
+        });
+        return contextValue;
     }, [
         getInstanceLinkConfig,
         resolveConnectionConfig,
@@ -113,7 +130,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     return <ConfigContext.Provider value={value}>{children}</ConfigContext.Provider>;
 };
 
-export const useConfig = (): ConfigContextValue => {
+export const useConfig = () => {
     const context = useContext(ConfigContext);
     if (!context) {
         throw new Error('useConfig must be used within a ConfigProvider');

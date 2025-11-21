@@ -3,9 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { useLocale } from 'hooks';
 import React from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
-import Config from 'react-native-config';
+import { APP_NAME, APP_IDENTIFIER, APP_LINK_PREFIX, FLEETBASE_HOST, FLEETBASE_KEY, GOOGLE_MAPS_API_KEY } from '@env';
 import { tailwind } from 'tailwind';
 import { translate } from 'utils';
+
+const Config = {
+    APP_NAME,
+    APP_IDENTIFIER,
+    APP_LINK_PREFIX,
+    FLEETBASE_HOST,
+    FLEETBASE_KEY,
+    GOOGLE_MAPS_API_KEY,
+};
 
 const keyMissing = (key) => {
     return !Config[key];

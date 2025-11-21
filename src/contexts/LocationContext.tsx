@@ -1,11 +1,21 @@
 import React, { createContext, useState, useEffect, useCallback, useContext, useMemo } from 'react';
-import BackgroundGeolocation from 'react-native-background-geolocation';
-import BackgroundFetch from 'react-native-background-fetch';
 import { Place, Point } from '@fleetbase/sdk';
 import { isEmpty, config } from '../utils';
 import { useAuth } from './AuthContext';
 import useStorage from '../hooks/use-storage';
 import useFleetbase from '../hooks/use-fleetbase';
+
+// Temporary flag to disable background geolocation (set to false to enable)
+const DISABLE_BACKGROUND_GEOLOCATION = true;
+
+// Lazy load BackgroundGeolocation only when needed to avoid license validation
+let BackgroundGeolocation: any = null;
+let BackgroundFetch: any = null;
+
+if (!DISABLE_BACKGROUND_GEOLOCATION) {
+    BackgroundGeolocation = require('react-native-background-geolocation').default;
+    BackgroundFetch = require('react-native-background-fetch').default;
+}
 
 const LocationContext = createContext({
     location: null,
@@ -23,6 +33,10 @@ export const LocationProvider = ({ children }) => {
 
     // Manually track location
     const trackLocation = useCallback(async () => {
+        if (DISABLE_BACKGROUND_GEOLOCATION) {
+            console.log('[LocationContext] Background geolocation is disabled');
+            return;
+        }
         try {
             const location = await BackgroundGeolocation.getCurrentPosition({
                 samples: 3,
@@ -98,75 +112,108 @@ export const LocationProvider = ({ children }) => {
 
     // Function to start tracking.
     const startTracking = useCallback(() => {
-        BackgroundGeolocation.start(() => {
-            setIsTracking(true);
-            console.log('[BackgroundGeolocation] Tracking started');
-        });
+        if (DISABLE_BACKGROUND_GEOLOCATION) {
+            console.log('[LocationContext] Background geolocation is disabled, skipping start');
+            return;
+        }
+        try {
+            BackgroundGeolocation.start(() => {
+                setIsTracking(true);
+                console.log('[BackgroundGeolocation] Tracking started');
+            });
+        } catch (error) {
+            console.warn('[BackgroundGeolocation] Failed to start tracking:', error);
+        }
     }, []);
 
     // Function to stop tracking.
     const stopTracking = useCallback(() => {
-        BackgroundGeolocation.stop(() => {
-            setIsTracking(false);
-            console.log('[BackgroundGeolocation] Tracking stopped');
-        });
+        if (DISABLE_BACKGROUND_GEOLOCATION) {
+            console.log('[LocationContext] Background geolocation is disabled, skipping stop');
+            return;
+        }
+        try {
+            BackgroundGeolocation.stop(() => {
+                setIsTracking(false);
+                console.log('[BackgroundGeolocation] Tracking stopped');
+            });
+        } catch (error) {
+            console.warn('[BackgroundGeolocation] Failed to stop tracking:', error);
+        }
     }, []);
 
     useEffect(() => {
-        if (!driver) return;
-
-        BackgroundGeolocation.ready(
-            {
-                backgroundPermissionRationale: {
-                    title: `Allow ${config('APP_NAME')} to access your location`,
-                    message: `${config('APP_NAME')} collects location data to update your position in real-time, even when the app is closed or running in the background. This allows dispatchers and ops teams to track your progress and provide better support while you drive.`,
-                    positiveAction: 'Allow',
-                    negativeAction: 'Deny',
-                },
-                desiredAccuracy: BackgroundGeolocation.DESIRED_ACCURACY_HIGH,
-                distanceFilter: 10,
-                stopOnTerminate: false,
-                startOnBoot: true,
-                stopTimeout: 1,
-                debug: false,
-                ...getHttpConfig(),
-            },
-            (state) => {
-                console.log('[BackgroundGeolocation] is ready:', state);
-                if (isOnline) {
-                    startTracking();
-                }
+        if (!driver || DISABLE_BACKGROUND_GEOLOCATION) {
+            if (DISABLE_BACKGROUND_GEOLOCATION) {
+                console.log('[LocationContext] Background geolocation is disabled, skipping initialization');
             }
-        );
+            return;
+        }
 
-        // Subscribe to location events.
-        BackgroundGeolocation.onLocation(onLocation, onLocationError);
+        try {
+            BackgroundGeolocation.ready(
+                {
+                    backgroundPermissionRationale: {
+                        title: `Allow ${config('APP_NAME')} to access your location`,
+                        message: `${config('APP_NAME')} collects location data to update your position in real-time, even when the app is closed or running in the background. This allows dispatchers and ops teams to track your progress and provide better support while you drive.`,
+                        positiveAction: 'Allow',
+                        negativeAction: 'Deny',
+                    },
+                    desiredAccuracy: BackgroundGeolocation.DESIRED_ACCURACY_HIGH,
+                    distanceFilter: 10,
+                    stopOnTerminate: false,
+                    startOnBoot: true,
+                    stopTimeout: 1,
+                    debug: false,
+                    ...getHttpConfig(),
+                },
+                (state) => {
+                    console.log('[BackgroundGeolocation] is ready:', state);
+                    if (isOnline) {
+                        startTracking();
+                    }
+                }
+            );
 
-        // Subscribe to motion and activity events.
-        BackgroundGeolocation.onMotionChange(onMotionChange);
+            // Subscribe to location events.
+            BackgroundGeolocation.onLocation(onLocation, onLocationError);
 
-        // Clean up the listener when unmounting.
-        return () => {
-            BackgroundGeolocation.removeListeners();
-        };
+            // Subscribe to motion and activity events.
+            BackgroundGeolocation.onMotionChange(onMotionChange);
+
+            // Clean up the listener when unmounting.
+            return () => {
+                BackgroundGeolocation.removeListeners();
+            };
+        } catch (error) {
+            console.warn('[BackgroundGeolocation] Failed to initialize (license may be missing):', error);
+        }
     }, [driver, onLocation, onLocationError, onMotionChange, isOnline, getHttpConfig]);
 
     // Configure BackgroundFetch for periodic tasks.
     useEffect(() => {
-        BackgroundFetch.configure(
-            {
-                minimumFetchInterval: 5,
-                stopOnTerminate: false,
-                startOnBoot: true,
-            },
-            async (taskId) => {
-                await trackLocation();
-                BackgroundFetch.finish(taskId);
-            },
-            (error) => {
-                console.warn('[BackgroundFetch] failed to configure:', error);
-            }
-        );
+        if (DISABLE_BACKGROUND_GEOLOCATION) {
+            console.log('[LocationContext] Background geolocation is disabled, skipping BackgroundFetch');
+            return;
+        }
+        try {
+            BackgroundFetch.configure(
+                {
+                    minimumFetchInterval: 5,
+                    stopOnTerminate: false,
+                    startOnBoot: true,
+                },
+                async (taskId) => {
+                    await trackLocation();
+                    BackgroundFetch.finish(taskId);
+                },
+                (error) => {
+                    console.warn('[BackgroundFetch] failed to configure:', error);
+                }
+            );
+        } catch (error) {
+            console.warn('[BackgroundFetch] Failed to initialize:', error);
+        }
     }, [trackLocation]);
 
     // Toggle tracking based on the driver's online status.

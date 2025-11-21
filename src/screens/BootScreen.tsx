@@ -29,41 +29,52 @@ const BootScreen = ({ route }) => {
     useFocusEffect(
         useCallback(() => {
             const checkLocationPermission = async () => {
+                console.log('[BootScreen] Checking location permission...');
                 const permission = Platform.OS === 'ios' ? PERMISSIONS.IOS.LOCATION_WHEN_IN_USE : PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
 
                 const result = await check(permission);
+                console.log('[BootScreen] Location permission result:', result);
                 if (result === RESULTS.GRANTED) {
                     initializeNavigator();
                 } else {
                     later(() => BootSplash.hide(), 300);
                     // If the locationEnabled flag is set meaning not null or undefined then initialize navigator
                     if (locationEnabled !== undefined && locationEnabled !== null) {
+                        console.log('[BootScreen] locationEnabled flag is set, initializing...');
                         initializeNavigator();
                     } else {
+                        console.log('[BootScreen] Navigating to LocationPermission screen');
                         navigation.navigate('LocationPermission');
                     }
                 }
             };
 
             const initializeNavigator = async () => {
+                console.log('[BootScreen] Initializing navigator...');
+                console.log('[BootScreen] hasFleetbaseConfig:', hasFleetbaseConfig());
                 if (!hasFleetbaseConfig()) {
+                    console.log('[BootScreen] Missing Fleetbase config!');
                     return setError(new Error(t('BootScreen.missingRequiredConfigurationKeys')));
                 }
 
                 try {
                     later(() => {
                         try {
+                            console.log('[BootScreen] Navigating... isAuthenticated:', isAuthenticated);
                             // Any initialization processes will run here
                             if (isAuthenticated) {
+                                console.log('[BootScreen] Navigating to DriverNavigator');
                                 navigation.navigate('DriverNavigator');
                             } else {
+                                console.log('[BootScreen] Navigating to Login');
                                 navigation.navigate('Login');
                             }
                         } catch (err) {
-                            console.warn('Failed to navigate to screen:', err);
+                            console.warn('[BootScreen] Failed to navigate to screen:', err);
                         }
                     }, 0);
                 } catch (initializationError) {
+                    console.error('[BootScreen] Initialization error:', initializationError);
                     setError(initializationError);
                 } finally {
                     later(() => BootSplash.hide(), 300);

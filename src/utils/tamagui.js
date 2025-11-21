@@ -1,4 +1,13 @@
-import Config from 'react-native-config';
+import { APP_NAME, APP_IDENTIFIER, APP_LINK_PREFIX, FLEETBASE_HOST, FLEETBASE_KEY, GOOGLE_MAPS_API_KEY } from '@env';
+
+const Config = {
+    APP_NAME,
+    APP_IDENTIFIER,
+    APP_LINK_PREFIX,
+    FLEETBASE_HOST,
+    FLEETBASE_KEY,
+    GOOGLE_MAPS_API_KEY,
+};
 
 export function parseConfigObjectString(objectString) {
     if (!objectString || typeof objectString !== 'string' || objectString.trim() === '') {

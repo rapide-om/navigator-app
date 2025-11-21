@@ -1,4 +1,4 @@
-import Config from 'react-native-config';
+import { APP_NAME, APP_IDENTIFIER, APP_LINK_PREFIX, FLEETBASE_HOST, FLEETBASE_KEY, GOOGLE_MAPS_API_KEY } from '@env';
 import { Platform, ActionSheetIOS, Alert, Dimensions } from 'react-native';
 import { Collection, lookup } from '@fleetbase/sdk';
 import storage, { getString } from './storage';
@@ -10,6 +10,15 @@ import { countries } from 'countries-list';
 import { parseISO } from 'date-fns';
 import NavigatorConfig from '../../navigator.config';
 import ImageResizer from '@bam.tech/react-native-image-resizer';
+
+const Config = {
+    APP_NAME,
+    APP_IDENTIFIER,
+    APP_LINK_PREFIX,
+    FLEETBASE_HOST,
+    FLEETBASE_KEY,
+    GOOGLE_MAPS_API_KEY,
+};
 
 export async function resizePhoto(uri: string, maxSize = 1024): Promise<string> {
     const MAX_DIMENSION = maxSize;

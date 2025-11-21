@@ -1,15 +1,47 @@
-import { mergeConfigs, config, toBoolean } from '../src/utils/config';
-import { toArray } from '../src/utils';
+import { APP_THEME, DRIVER_NAVIGATOR_TABS, DRIVER_NAVIGATOR_DEFAULT_TAB, DEFAULT_LOCALE, LOGIN_BG_COLOR } from '@env';
+
+// Helper functions to avoid circular dependency
+function toArray(target, delimiter = ',') {
+    if (Array.isArray(target)) {
+        return target;
+    }
+    if (typeof target === 'string') {
+        return target.split(delimiter);
+    }
+    return target ? Array.from(target) : [];
+}
+
+function mergeConfigs(defaultConfig = {}, targetConfig = {}) {
+    if (typeof targetConfig !== 'object' || targetConfig === null) {
+        return defaultConfig;
+    }
+    const result = { ...defaultConfig };
+    for (const key in targetConfig) {
+        if (
+            typeof targetConfig[key] === 'object' &&
+            targetConfig[key] !== null &&
+            !Array.isArray(targetConfig[key]) &&
+            typeof result[key] === 'object' &&
+            result[key] !== null &&
+            !Array.isArray(result[key])
+        ) {
+            result[key] = mergeConfigs(result[key], targetConfig[key]);
+        } else {
+            result[key] = targetConfig[key];
+        }
+    }
+    return result;
+}
 
 export const DefaultConfig = {
-    theme: config('APP_THEME', 'blue'),
+    theme: APP_THEME || 'blue',
     driverNavigator: {
-        tabs: toArray(config('DRIVER_NAVIGATOR_TABS', 'DriverDashboardTab,DriverTaskTab,DriverReportTab,DriverChatTab,DriverAccountTab')),
-        defaultTab: toArray(config('DRIVER_NAVIGATOR_DEFAULT_TAB', 'DriverDashboardTab')),
+        tabs: toArray(DRIVER_NAVIGATOR_TABS || 'DriverDashboardTab,DriverTaskTab,DriverReportTab,DriverChatTab,DriverAccountTab'),
+        defaultTab: toArray(DRIVER_NAVIGATOR_DEFAULT_TAB || 'DriverDashboardTab'),
     },
-    defaultLocale: config('DEFAULT_LOCALE', 'en'),
+    defaultLocale: DEFAULT_LOCALE || 'en',
     colors: {
-        loginBackground: config('LOGIN_BG_COLOR', '#111827'),
+        loginBackground: LOGIN_BG_COLOR || '#111827',
     },
 };
 

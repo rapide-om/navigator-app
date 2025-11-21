@@ -1,8 +1,7 @@
-import { useMemo, useState, useEffect, useCallback } from 'react';
 import Fleetbase from '@fleetbase/sdk';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useConfig } from '../contexts/ConfigContext';
 import useStorage from './use-storage';
-
 const useFleetbase = () => {
     const { resolveConnectionConfig } = useConfig();
     const FLEETBASE_KEY = resolveConnectionConfig('FLEETBASE_KEY');
@@ -20,16 +19,20 @@ const useFleetbase = () => {
     }, [resolveConnectionConfig]);
 
     useEffect(() => {
-        const FLEETBASE_HOST = resolveConnectionConfig('FLEETBASE_HOST');
-        const FLEETBASE_KEY = resolveConnectionConfig('FLEETBASE_KEY');
+        const HOST = resolveConnectionConfig('FLEETBASE_HOST');
+        const KEY = resolveConnectionConfig('FLEETBASE_KEY');
+        console.log('Initializing Fleetbase with host:', HOST, ' key:', KEY);
 
         try {
-            // If authToken is present, initialize a new Fleetbase instance with it,
-            // otherwise fall back to the default configuration.
-            const fleetbase = authToken ? new Fleetbase(authToken, { host: FLEETBASE_HOST }) : new Fleetbase(FLEETBASE_KEY, { host: FLEETBASE_HOST });
-            setFleetbase(fleetbase);
-        } catch (initializationError) {
-            setError(initializationError as Error);
+            const fb = new Fleetbase(KEY, { host: HOST });
+
+            if (authToken) {
+                fb.session.setToken(authToken);
+            }
+
+            setFleetbase(fb);
+        } catch (err) {
+            setError(err as Error);
         }
     }, [authToken, resolveConnectionConfig]);
 
