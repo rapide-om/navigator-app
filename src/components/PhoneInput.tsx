@@ -74,6 +74,10 @@ const PhoneInput = ({ value, onChange, bg, width = '100%', defaultCountryCode = 
     useEffect(() => {
         if (onChange) {
             const combinedValue = `+${selectedCountry.phone}${phoneNumber}`;
+            console.log('[PhoneInput] Country Code:', selectedCountry.phone);
+            console.log('[PhoneInput] Local Number:', phoneNumber);
+            console.log('[PhoneInput] Combined Value:', combinedValue);
+            console.log('[PhoneInput] Selected Country:', selectedCountry.code, selectedCountry.name);
             onChange(combinedValue, phoneNumber, selectedCountry);
         }
     }, [selectedCountry, phoneNumber, onChange]);

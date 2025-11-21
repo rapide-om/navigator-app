@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { later } from '../utils';
 import { useNotification } from '../contexts/NotificationContext';
-import { useChat } from '../contexts/ChatContext';
-import { useOrderManager } from '../contexts/OrderManagerContext';
+import { useChat, ChatProvider } from '../contexts/ChatContext';
+import { useOrderManager, OrderManagerProvider } from '../contexts/OrderManagerContext';
 import useFleetbase from '../hooks/use-fleetbase';
 
 const getCurrentScreen = (tabNavigation) => {
@@ -20,7 +20,7 @@ const getCurrentScreen = (tabNavigation) => {
     };
 };
 
-const DriverLayout = ({ children, state, descriptors, navigation: tabNavigation }) => {
+const DriverLayoutInner = ({ children, state, descriptors, navigation: tabNavigation }) => {
     const navigation = useNavigation();
     const { fleetbase } = useFleetbase();
     const { getChannel } = useChat();
@@ -107,6 +107,16 @@ const DriverLayout = ({ children, state, descriptors, navigation: tabNavigation 
     }, [addNotificationListener, removeNotificationListener, fleetbase, tabNavigation, navigation]);
 
     return <View style={{ width: '100%', height: '100%', flex: 1 }}>{children}</View>;
+};
+
+const DriverLayout = (props) => {
+    return (
+        <OrderManagerProvider>
+            <ChatProvider>
+                <DriverLayoutInner {...props} />
+            </ChatProvider>
+        </OrderManagerProvider>
+    );
 };
 
 export default DriverLayout;

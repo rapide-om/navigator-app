@@ -13,9 +13,10 @@
         </trust-anchors>
     </base-config>
 
-    <domain-config>
+    <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">fleetbase.io</domain>
         <domain includeSubdomains="true">fleetbase.engineering</domain>
+        <domain includeSubdomains="true">192.168.1.16</domain>
         <trust-anchors>
             <certificates src="user"/>
             <certificates src="system"/>

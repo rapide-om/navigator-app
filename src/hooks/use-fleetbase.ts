@@ -30,6 +30,37 @@ const useFleetbase = () => {
                 fb.session.setToken(authToken);
             }
 
+            // Add request interceptor for debugging
+            const adapter = fb.getAdapter();
+            if (adapter && adapter.client && adapter.client.interceptors) {
+                adapter.client.interceptors.request.use(
+                    (config) => {
+                        console.log('[API REQUEST]', config.method?.toUpperCase(), config.url);
+                        console.log('[API REQUEST] Base URL:', config.baseURL);
+                        console.log('[API REQUEST] Data:', JSON.stringify(config.data, null, 2));
+                        console.log('[API REQUEST] Headers:', JSON.stringify(config.headers, null, 2));
+                        return config;
+                    },
+                    (error) => {
+                        console.error('[API REQUEST ERROR]', error);
+                        return Promise.reject(error);
+                    }
+                );
+
+                adapter.client.interceptors.response.use(
+                    (response) => {
+                        console.log('[API RESPONSE]', response.status, response.config.url);
+                        console.log('[API RESPONSE] Data:', JSON.stringify(response.data, null, 2));
+                        return response;
+                    },
+                    (error) => {
+                        console.error('[API RESPONSE ERROR]', error.config?.url, error.message);
+                        console.error('[API RESPONSE ERROR] Details:', JSON.stringify(error.response?.data, null, 2));
+                        return Promise.reject(error);
+                    }
+                );
+            }
+
             setFleetbase(fb);
         } catch (err) {
             setError(err as Error);

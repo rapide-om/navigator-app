@@ -42,8 +42,6 @@ import ChatParticipantsScreen from '../screens/ChatParticipantsScreen';
 import CreateChatChannelScreen from '../screens/CreateChatChannelScreen';
 import DriverProfileScreen from '../screens/DriverProfileScreen';
 import DriverAccountScreen from '../screens/DriverAccountScreen';
-import { useOrderManager } from '../contexts/OrderManagerContext';
-import { useChat } from '../contexts/ChatContext';
 import useAppTheme from '../hooks/use-app-theme';
 import DriverLayout from '../layouts/DriverLayout';
 import DriverOnlineToggle from '../components/DriverOnlineToggle';
@@ -87,17 +85,8 @@ function createTabScreens() {
         },
         DriverTaskTab: {
             screen: DriverTaskTab,
-            options: () => {
-                const { allActiveOrders } = useOrderManager();
-
-                return {
-                    tabBarLabel: config('DRIVER_ORDER_TAB_LABEL', 'Orders'),
-                    tabBarBadge: allActiveOrders.length,
-                    tabBarBadgeStyle: {
-                        marginRight: -5,
-                        opacity: allActiveOrders.length ? 1 : 0.5,
-                    },
-                };
+            options: {
+                tabBarLabel: config('DRIVER_ORDER_TAB_LABEL', 'Orders'),
             },
         },
         DriverReportTab: {
@@ -110,17 +99,8 @@ function createTabScreens() {
         },
         DriverChatTab: {
             screen: DriverChatTab,
-            options: () => {
-                const { unreadCount } = useChat();
-
-                return {
-                    tabBarLabel: config('DRIVER_CHAT_TAB_LABEL', 'Chat'),
-                    tabBarBadge: unreadCount,
-                    tabBarBadgeStyle: {
-                        marginRight: -5,
-                        opacity: unreadCount ? 1 : 0.5,
-                    },
-                };
+            options: {
+                tabBarLabel: config('DRIVER_CHAT_TAB_LABEL', 'Chat'),
             },
         },
         DriverAccountTab: {

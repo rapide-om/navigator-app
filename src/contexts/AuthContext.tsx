@@ -236,16 +236,21 @@ export const AuthProvider = ({ children }) => {
     const login = useCallback(
         async (phone) => {
             dispatch({ type: 'LOGIN', phone, isSendingCode: true });
+            console.log('[AuthContext] Login request - Phone:', phone);
+            console.log('[AuthContext] Login request - Fleetbase host:', adapter?.config?.host);
+            console.log('[AuthContext] Login request - Making call to drivers.login()');
             try {
                 const { method } = await fleetbase.drivers.login(phone);
+                console.log('[AuthContext] Login success - Method:', method);
                 dispatch({ type: 'LOGIN', phone, isSendingCode: false, loginMethod: method ?? 'sms' });
             } catch (error) {
                 dispatch({ type: 'LOGIN', phone, isSendingCode: false });
                 console.warn('[AuthContext] Login failed:', error);
+                console.log('[AuthContext] Login error details:', JSON.stringify(error, null, 2));
                 throw error;
             }
         },
-        [fleetbase]
+        [fleetbase, adapter]
     );
 
     // Remove local session data

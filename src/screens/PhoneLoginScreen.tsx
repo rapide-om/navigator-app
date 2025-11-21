@@ -49,9 +49,9 @@ const PhoneLoginScreen = () => {
             <YStack flex={1} alignItems='center' space='$3'>
                 <YStack space='$2' width='100%' px='$5' pt='$5'>
                     <Text color='$gray-200' fontWeight='bold' fontSize='$8' mb='$3'>
-                        Login via SMS
+                        Login via WhatsApp
                     </Text>
-                    <PhoneInput value={phone} onChange={(phoneNumber) => setPhone(phoneNumber)} />
+                    <PhoneInput value={phone} onChange={(phoneNumber) => setPhone(phoneNumber)} defaultCountryCode="LB" />
                     <Button size='$5' onPress={handleSendVerificationCode} bg='$primary' width='100%' opacity={isSendingCode ? 0.75 : 1} disabled={isSendingCode} rounded>
                         <Button.Icon>{isSendingCode ? <Spinner color='$white' /> : <FontAwesomeIcon icon={faPaperPlane} color={'#fff'} />}</Button.Icon>
                         <Button.Text color='$white' fontWeight='bold'>
