@@ -22,6 +22,8 @@ const LocationContext = createContext({
     isTracking: false,
     startTracking: () => {},
     stopTracking: () => {},
+    getDriverLocationAsPlace: () => null,
+    trackLocation: () => {},
 });
 
 export const LocationProvider = ({ children }) => {
@@ -56,6 +58,11 @@ export const LocationProvider = ({ children }) => {
     const getDriverLocationAsPlace = useCallback(
         (attributes = {}) => {
             const { coords } = location;
+
+            // Return null if coords are not available
+            if (!coords || !coords.latitude || !coords.longitude) {
+                return null;
+            }
 
             return new Place(
                 {

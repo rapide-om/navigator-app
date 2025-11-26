@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo, forwardRef, useImperativeHandle } from 'react';
-import { Animated, SafeAreaView, Pressable, FlatList, LayoutAnimation, UIManager, Platform } from 'react-native';
-import { Spinner, Button, Text, YStack, XStack, Separator, useTheme } from 'tamagui';
+import { Animated, SafeAreaView, Pressable, FlatList, LayoutAnimation, UIManager, Platform, ActivityIndicator } from 'react-native';
+import { Button, Text, YStack, XStack, Separator, useTheme } from 'tamagui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faLightbulb, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { toast, ToastPosition } from '@backpackapp-io/react-native-toast';
@@ -59,8 +59,8 @@ const OrderActivitySelect = forwardRef(({ onChange, waypoint, activities = [], s
                 <YStack bg={backgroundColor} borderWidth={1} borderColor={borderColor} px='$3' py='$3' alignItems='center' justifyContent='flex-start' borderRadius='$4'>
                     <XStack alignItems='flex-start'>
                         {activityLoading === activity.code && (
-                            <YStack mt='$1' mr='$2'>
-                                <Spinner color={fontColor} />
+                            <YStack mt='$1' mr='$2' width={20} height={20}>
+                                <ActivityIndicator size='small' color={theme[fontColor]?.val ?? '#fff'} />
                             </YStack>
                         )}
                         <YStack flex={1} space='$1'>
@@ -133,7 +133,7 @@ const OrderActivitySelect = forwardRef(({ onChange, waypoint, activities = [], s
                             )}
                             {isLoading ? (
                                 <YStack alignItems='center' justifyContent='center' height={200} width='100%'>
-                                    <Spinner color='$textPrimary' size='$6' />
+                                    <ActivityIndicator size='large' color={theme['$textPrimary']?.val ?? '#000'} />
                                 </YStack>
                             ) : (
                                 <BottomSheetFlatList

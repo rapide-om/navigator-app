@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
-import { YStack, Spinner, Text, useTheme } from 'tamagui';
+import { ActivityIndicator } from 'react-native';
+import { YStack, Text, useTheme } from 'tamagui';
 import LinearGradient from 'react-native-linear-gradient';
 
 interface LoadingOverlayProps {
@@ -42,7 +43,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({
                 style={{ position: 'absolute', opacity: overlayOpacity, top: 0, left: 0, right: 0, bottom: 0 }}
             />
             <YStack flex={1} alignItems='center' justifyContent='center'>
-                <Spinner size={spinnerSize} color={spinnerColor} />
+                <ActivityIndicator size={spinnerSize === 'lg' ? 'large' : 'small'} color={theme[spinnerColor]?.val ?? '#fff'} />
                 {text && (
                     <Text
                         marginTop='$2'

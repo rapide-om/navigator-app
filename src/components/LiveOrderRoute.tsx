@@ -92,6 +92,11 @@ const LiveOrderRoute = ({
     const startWaypoint = !pickup && waypoints.length > 0 ? waypoints[0] : pickup;
     let start = focusCurrentDestination ? getDriverLocationAsPlace() : restoreFleetbasePlace(startWaypoint, adapter);
 
+    // Fallback to startWaypoint if driver location is not available
+    if (!start) {
+        start = restoreFleetbasePlace(startWaypoint, adapter);
+    }
+
     // Determine the end waypoint.
     const endWaypoint = !dropoff && waypoints.length > 0 && last(waypoints) !== first(waypoints) ? last(waypoints) : dropoff;
     let end = focusCurrentDestination ? currentDestination : restoreFleetbasePlace(endWaypoint, adapter);

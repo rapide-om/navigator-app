@@ -269,7 +269,7 @@ rule CXX_COMPILER__react_codegen_RNWorkletsSpec_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a
+  command = /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a
   description = Re-running CMake...
   generator = 1
 
@@ -278,7 +278,7 @@ rule RERUN_CMAKE
 # Rule for re-checking globbed directories.
 
 rule VERIFY_GLOBS
-  command = /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -P /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a/CMakeFiles/VerifyGlobs.cmake
+  command = /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -P /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a/CMakeFiles/VerifyGlobs.cmake
   description = Re-checking globbed directories...
   generator = 1
 

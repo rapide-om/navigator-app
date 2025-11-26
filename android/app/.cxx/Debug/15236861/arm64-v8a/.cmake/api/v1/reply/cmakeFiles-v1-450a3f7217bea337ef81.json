@@ -6,7 +6,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a/CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -23,12 +23,12 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -36,31 +36,31 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a/CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake"
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a/CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -69,57 +69,57 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -132,42 +132,42 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
+			"path" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -179,19 +179,19 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfig.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -267,11 +267,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake"
+			"path" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -289,7 +289,7 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a",
+		"build" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a",
 		"source" : "/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
 	},
 	"version" : 

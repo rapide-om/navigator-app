@@ -90,7 +90,7 @@ build /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/int
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -101,7 +101,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -183,7 +183,7 @@ build RNImageResizerSpec_autolinked_build/react_codegen_RNImageResizerSpec: phon
 # Utility command for edit_cache
 
 build RNImageResizerSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImageResizerSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImageResizerSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -194,7 +194,7 @@ build RNImageResizerSpec_autolinked_build/edit_cache: phony RNImageResizerSpec_a
 # Utility command for rebuild_cache
 
 build RNImageResizerSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImageResizerSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImageResizerSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -276,7 +276,7 @@ build rncameraroll_autolinked_build/react_codegen_rncameraroll: phony rncameraro
 # Utility command for edit_cache
 
 build rncameraroll_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rncameraroll_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rncameraroll_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -287,7 +287,7 @@ build rncameraroll_autolinked_build/edit_cache: phony rncameraroll_autolinked_bu
 # Utility command for rebuild_cache
 
 build rncameraroll_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rncameraroll_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rncameraroll_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -369,7 +369,7 @@ build rnblurview_autolinked_build/react_codegen_rnblurview: phony rnblurview_aut
 # Utility command for edit_cache
 
 build rnblurview_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnblurview_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnblurview_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -380,7 +380,7 @@ build rnblurview_autolinked_build/edit_cache: phony rnblurview_autolinked_build/
 # Utility command for rebuild_cache
 
 build rnblurview_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnblurview_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnblurview_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -462,7 +462,7 @@ build RNGoogleSignInCGen_autolinked_build/react_codegen_RNGoogleSignInCGen: phon
 # Utility command for edit_cache
 
 build RNGoogleSignInCGen_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNGoogleSignInCGen_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNGoogleSignInCGen_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -473,7 +473,7 @@ build RNGoogleSignInCGen_autolinked_build/edit_cache: phony RNGoogleSignInCGen_a
 # Utility command for rebuild_cache
 
 build RNGoogleSignInCGen_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNGoogleSignInCGen_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNGoogleSignInCGen_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -555,7 +555,7 @@ build RNBootSplashSpec_autolinked_build/react_codegen_RNBootSplashSpec: phony RN
 # Utility command for edit_cache
 
 build RNBootSplashSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNBootSplashSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNBootSplashSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -566,7 +566,7 @@ build RNBootSplashSpec_autolinked_build/edit_cache: phony RNBootSplashSpec_autol
 # Utility command for rebuild_cache
 
 build RNBootSplashSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNBootSplashSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNBootSplashSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -648,7 +648,7 @@ build rngesturehandler_codegen_autolinked_build/react_codegen_rngesturehandler_c
 # Utility command for edit_cache
 
 build rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rngesturehandler_codegen_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rngesturehandler_codegen_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -659,7 +659,7 @@ build rngesturehandler_codegen_autolinked_build/edit_cache: phony rngesturehandl
 # Utility command for rebuild_cache
 
 build rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rngesturehandler_codegen_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rngesturehandler_codegen_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -741,7 +741,7 @@ build RNHapticFeedbackSpec_autolinked_build/react_codegen_RNHapticFeedbackSpec: 
 # Utility command for edit_cache
 
 build RNHapticFeedbackSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNHapticFeedbackSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNHapticFeedbackSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -752,7 +752,7 @@ build RNHapticFeedbackSpec_autolinked_build/edit_cache: phony RNHapticFeedbackSp
 # Utility command for rebuild_cache
 
 build RNHapticFeedbackSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNHapticFeedbackSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNHapticFeedbackSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -834,7 +834,7 @@ build RNImagePickerSpec_autolinked_build/react_codegen_RNImagePickerSpec: phony 
 # Utility command for edit_cache
 
 build RNImagePickerSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImagePickerSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImagePickerSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -845,7 +845,7 @@ build RNImagePickerSpec_autolinked_build/edit_cache: phony RNImagePickerSpec_aut
 # Utility command for rebuild_cache
 
 build RNImagePickerSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImagePickerSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNImagePickerSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -927,7 +927,7 @@ build RNKeychainSpec_autolinked_build/react_codegen_RNKeychainSpec: phony RNKeyc
 # Utility command for edit_cache
 
 build RNKeychainSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNKeychainSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNKeychainSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -938,7 +938,7 @@ build RNKeychainSpec_autolinked_build/edit_cache: phony RNKeychainSpec_autolinke
 # Utility command for rebuild_cache
 
 build RNKeychainSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNKeychainSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNKeychainSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1020,7 +1020,7 @@ build RNLocalizeSpec_autolinked_build/react_codegen_RNLocalizeSpec: phony RNLoca
 # Utility command for edit_cache
 
 build RNLocalizeSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNLocalizeSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNLocalizeSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1031,7 +1031,7 @@ build RNLocalizeSpec_autolinked_build/edit_cache: phony RNLocalizeSpec_autolinke
 # Utility command for rebuild_cache
 
 build RNLocalizeSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNLocalizeSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNLocalizeSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1078,7 +1078,7 @@ build MMKVStorageSpec_autolinked_build/react_codegen_MMKVStorageSpec: phony MMKV
 # Utility command for edit_cache
 
 build MMKVStorageSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/MMKVStorageSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/MMKVStorageSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1089,7 +1089,7 @@ build MMKVStorageSpec_autolinked_build/edit_cache: phony MMKVStorageSpec_autolin
 # Utility command for rebuild_cache
 
 build MMKVStorageSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/MMKVStorageSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/MMKVStorageSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1171,7 +1171,7 @@ build RNPermissionsSpec_autolinked_build/react_codegen_RNPermissionsSpec: phony 
 # Utility command for edit_cache
 
 build RNPermissionsSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNPermissionsSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNPermissionsSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1182,7 +1182,7 @@ build RNPermissionsSpec_autolinked_build/edit_cache: phony RNPermissionsSpec_aut
 # Utility command for rebuild_cache
 
 build RNPermissionsSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNPermissionsSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNPermissionsSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1264,7 +1264,7 @@ build rnreanimated_autolinked_build/react_codegen_rnreanimated: phony rnreanimat
 # Utility command for edit_cache
 
 build rnreanimated_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnreanimated_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnreanimated_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1275,7 +1275,7 @@ build rnreanimated_autolinked_build/edit_cache: phony rnreanimated_autolinked_bu
 # Utility command for rebuild_cache
 
 build rnreanimated_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnreanimated_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnreanimated_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1393,7 +1393,7 @@ build /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/int
 # Utility command for edit_cache
 
 build safeareacontext_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/safeareacontext_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/safeareacontext_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1404,7 +1404,7 @@ build safeareacontext_autolinked_build/edit_cache: phony safeareacontext_autolin
 # Utility command for rebuild_cache
 
 build safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/safeareacontext_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/safeareacontext_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1610,7 +1610,7 @@ build /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/int
 # Utility command for edit_cache
 
 build rnscreens_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnscreens_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnscreens_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1621,7 +1621,7 @@ build rnscreens_autolinked_build/edit_cache: phony rnscreens_autolinked_build/CM
 # Utility command for rebuild_cache
 
 build rnscreens_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnscreens_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnscreens_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1703,7 +1703,7 @@ build RNShareSpec_autolinked_build/react_codegen_RNShareSpec: phony RNShareSpec_
 # Utility command for edit_cache
 
 build RNShareSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNShareSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNShareSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1714,7 +1714,7 @@ build RNShareSpec_autolinked_build/edit_cache: phony RNShareSpec_autolinked_buil
 # Utility command for rebuild_cache
 
 build RNShareSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNShareSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNShareSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1848,7 +1848,7 @@ build /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/int
 # Utility command for edit_cache
 
 build rnsvg_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnsvg_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnsvg_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1859,7 +1859,7 @@ build rnsvg_autolinked_build/edit_cache: phony rnsvg_autolinked_build/CMakeFiles
 # Utility command for rebuild_cache
 
 build rnsvg_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnsvg_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnsvg_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1941,7 +1941,7 @@ build RNCWebViewSpec_autolinked_build/react_codegen_RNCWebViewSpec: phony RNCWeb
 # Utility command for edit_cache
 
 build RNCWebViewSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNCWebViewSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNCWebViewSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -1952,7 +1952,7 @@ build RNCWebViewSpec_autolinked_build/edit_cache: phony RNCWebViewSpec_autolinke
 # Utility command for rebuild_cache
 
 build RNCWebViewSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNCWebViewSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNCWebViewSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -2034,7 +2034,7 @@ build rnworklets_autolinked_build/react_codegen_rnworklets: phony rnworklets_aut
 # Utility command for edit_cache
 
 build rnworklets_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnworklets_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnworklets_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -2045,7 +2045,7 @@ build rnworklets_autolinked_build/edit_cache: phony rnworklets_autolinked_build/
 # Utility command for rebuild_cache
 
 build rnworklets_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnworklets_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/rnworklets_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -2127,7 +2127,7 @@ build RNWorkletsSpec_autolinked_build/react_codegen_RNWorkletsSpec: phony RNWork
 # Utility command for edit_cache
 
 build RNWorkletsSpec_autolinked_build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNWorkletsSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNWorkletsSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -2138,7 +2138,7 @@ build RNWorkletsSpec_autolinked_build/edit_cache: phony RNWorkletsSpec_autolinke
 # Utility command for rebuild_cache
 
 build RNWorkletsSpec_autolinked_build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNWorkletsSpec_autolinked_build && /home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
+  COMMAND = cd /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/RNWorkletsSpec_autolinked_build && /home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup -B/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -2369,14 +2369,14 @@ build /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debu
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/cmake.verify_globs | /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android-legacy.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/flags.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/platforms.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/generated/autolinking/src/main/jni/Android-autolinking.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@bam.tech/react-native-image-resizer/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-camera-roll/camera-roll/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-community/blur/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-google-signin/google-signin/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-bootsplash/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-haptic-feedback/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-keychain/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-mmkv-storage/android/generated/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-permissions/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-share/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets-core/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/folly-flags.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/cmake.verify_globs | /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android-legacy.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/flags.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/platforms.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/generated/autolinking/src/main/jni/Android-autolinking.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@bam.tech/react-native-image-resizer/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-camera-roll/camera-roll/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-community/blur/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-google-signin/google-signin/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-bootsplash/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-haptic-feedback/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-keychain/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-mmkv-storage/android/generated/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-permissions/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-share/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets-core/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/folly-flags.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android-legacy.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/flags.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/platforms.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/generated/autolinking/src/main/jni/Android-autolinking.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@bam.tech/react-native-image-resizer/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-camera-roll/camera-roll/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-community/blur/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-google-signin/google-signin/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-bootsplash/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-haptic-feedback/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-keychain/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-mmkv-storage/android/generated/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-permissions/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-share/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets-core/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/folly-flags.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
+build /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android-legacy.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/android.toolchain.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/flags.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Clang.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android-Initialize.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/hooks/pre/Android.cmake /home/alialhadimansour/Android/Sdk/ndk/26.3.11579264/build/cmake/platforms.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake /home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/generated/autolinking/src/main/jni/Android-autolinking.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@bam.tech/react-native-image-resizer/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-camera-roll/camera-roll/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-community/blur/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/@react-native-google-signin/google-signin/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-bootsplash/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-haptic-feedback/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-keychain/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-localize/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-mmkv-storage/android/generated/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-permissions/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-share/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets-core/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native-worklets/android/build/generated/source/codegen/jni/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt /home/alialhadimansour/Projects/rapide/navigator-app/node_modules/react-native/ReactAndroid/cmake-utils/folly-flags.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
 
 
 #############################################

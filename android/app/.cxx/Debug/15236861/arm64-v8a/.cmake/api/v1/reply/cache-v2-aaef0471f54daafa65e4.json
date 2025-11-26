@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86"
+			"value" : "arm64-v8a"
 		},
 		{
 			"name" : "ANDROID_NDK",
@@ -99,7 +99,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86"
+			"value" : "arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_ANDROID_NDK",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/x86"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -235,7 +235,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cmake"
+			"value" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -247,7 +247,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/cpack"
+			"value" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -259,7 +259,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/bin/ctest"
+			"value" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/x86/prefab"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -755,7 +755,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/intermediates/cxx/Debug/15236861/obj/x86"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/intermediates/cxx/Debug/15236861/obj/arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alialhadimansour/Android/Sdk/cmake/3.22.1/share/cmake-3.22"
+			"value" : "/home/alialhadimansour/data/Sdk/cmake/3.22.1/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_RUNTIME_OUTPUT_DIRECTORY",
@@ -1027,7 +1027,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/intermediates/cxx/Debug/15236861/obj/x86"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/build/intermediates/cxx/Debug/15236861/obj/arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1335,7 +1335,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid"
 		},
 		{
 			"name" : "appmodules_BINARY_DIR",
@@ -1347,7 +1347,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/x86"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/arm64-v8a"
 		},
 		{
 			"name" : "appmodules_IS_TOP_LEVEL",
@@ -1383,7 +1383,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni"
+			"value" : "/home/alialhadimansour/Projects/rapide/navigator-app/android/app/.cxx/Debug/15236861/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni"
 		}
 	],
 	"kind" : "cache",

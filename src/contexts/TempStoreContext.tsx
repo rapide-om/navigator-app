@@ -18,7 +18,11 @@ const storeReducer = (state, action) => {
     }
 };
 
-const TempStoreContext = createContext();
+const TempStoreContext = createContext({
+    store: {},
+    setValue: (key, value) => {},
+    removeValue: (key) => {},
+});
 
 export const TempStoreProvider = ({ children }) => {
     const [store, dispatch] = useReducer(storeReducer, {});
