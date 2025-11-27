@@ -33,9 +33,9 @@ const UnitInput = ({
     placeholder = 'Input volume',
     wrapperProps = {},
     portalHost = 'MainPortal',
-    onBottomSheetPositionChanged,
-    onBottomSheetOpened,
-    onBottomSheetClosed,
+    onBottomSheetPositionChanged = (isOpen, fromIndex, toIndex) => {},
+    onBottomSheetOpened = (isOpen, fromIndex, toIndex) => {},
+    onBottomSheetClosed = (isOpen, fromIndex, toIndex) => {},
 }) => {
     const theme = useTheme();
     const [selectedUnit, setSelectedUnit] = useState(getDefaultUnit(type, defaultUnit));

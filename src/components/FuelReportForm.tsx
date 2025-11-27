@@ -1,21 +1,18 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState, useCallback, useMemo } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { Text, YStack, Button, Spinner, Input, useTheme } from 'tamagui';
+import { TouchableWithoutFeedback, Keyboard, ActivityIndicator } from 'react-native';
+import { Text, YStack, Button, Input, useTheme } from 'tamagui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
-import { PortalHost } from '@gorhom/portal';
 import { underscore } from 'inflected';
 import { uppercase } from '../utils/format';
 import { getDriverFuelReportStatuses, FuelReportStatus } from '../constants/Enums';
-import BottomSheetSelect from '../components/BottomSheetSelect';
+import SimpleSelect from '../components/SimpleSelect';
 import UnitInput from '../components/UnitInput';
 import MoneyInput from '../components/MoneyInput';
 
 const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText = 'Publish Fuel Report' }) => {
     const theme = useTheme();
-    const navigation = useNavigation();
     const insets = useSafeAreaInsets();
     const [fuelReport, setFuelReport] = useState({
         status: FuelReportStatus.DRAFT,
@@ -25,7 +22,6 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
         currency: 'USD',
         ...value,
     });
-    const [isBottomSheetPresenting, setIsBottomSheetPresenting] = useState(false);
 
     const isValid = useMemo(() => {
         return !!fuelReport.status && !!fuelReport.odometer && !!fuelReport.volume && !!fuelReport.amount;
@@ -48,12 +44,6 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
         }
     }, [onSubmit, isValid, fuelReport]);
 
-    useEffect(() => {
-        navigation.setOptions({
-            gestureEnabled: !isBottomSheetPresenting,
-        });
-    }, [isBottomSheetPresenting]);
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <YStack flex={1}>
@@ -62,7 +52,7 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
                         <Text color='$textPrimary' fontSize={18} fontWeight='bold' px='$1'>
                             Status
                         </Text>
-                        <BottomSheetSelect
+                        <SimpleSelect
                             value={fuelReport.status}
                             options={getDriverFuelReportStatuses()}
                             optionLabel='value'
@@ -70,9 +60,6 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
                             onChange={(value) => handleUpdateFuelReport('status', value)}
                             title='Select Fuel Report Status'
                             humanize={true}
-                            portalHost='FuelReportFormPortal'
-                            snapTo='100%'
-                            onBottomSheetPositionChanged={setIsBottomSheetPresenting}
                         />
                     </YStack>
                     <YStack px='$3' space='$2'>
@@ -102,8 +89,6 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
                                 handleUpdateFuelReport('metric_unit', unit);
                             }}
                             placeholder='Input fuel volume...'
-                            portalHost='FuelReportFormPortal'
-                            onBottomSheetPositionChanged={setIsBottomSheetPresenting}
                         />
                     </YStack>
                     <YStack px='$3' space='$2'>
@@ -118,8 +103,6 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
                                 handleUpdateFuelReport('currency', currency);
                             }}
                             placeholder='Input fuel costs...'
-                            portalHost='FuelReportFormPortal'
-                            onBottomSheetPositionChanged={setIsBottomSheetPresenting}
                         />
                     </YStack>
                 </YStack>
@@ -134,14 +117,13 @@ const FuelReportForm = ({ value = {}, onSubmit, isSubmitting = false, submitText
                             disabled={isSubmitting || !isValid}
                             opacity={isSubmitting || !isValid ? 0.6 : 1}
                         >
-                            <Button.Icon>{isSubmitting ? <Spinner color='$infoText' /> : <FontAwesomeIcon icon={faSave} color={theme['$infoText'].val} size={16} />}</Button.Icon>
+                            <Button.Icon>{isSubmitting ? <ActivityIndicator size='small' color={theme['$infoText']?.val ?? '#fff'} /> : <FontAwesomeIcon icon={faSave} color={theme['$infoText'].val} size={16} />}</Button.Icon>
                             <Button.Text color='$infoText' fontSize={15}>
                                 {submitText}
                             </Button.Text>
                         </Button>
                     </YStack>
                 </YStack>
-                <PortalHost name='FuelReportFormPortal' />
             </YStack>
         </TouchableWithoutFeedback>
     );

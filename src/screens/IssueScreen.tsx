@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Alert } from 'react-native';
+import { Alert, ScrollView } from 'react-native';
 import { Text, YStack, XStack, Button, Spinner, Separator, useTheme } from 'tamagui';
 import { Place } from '@fleetbase/sdk';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -16,16 +16,39 @@ import HeaderButton from '../components/HeaderButton';
 import PlaceMapView from '../components/PlaceMapView';
 import useFleetbase from '../hooks/use-fleetbase';
 
-const IssueScreen = () => {
+const IssueScreen = ({ route }) => {
     const theme = useTheme();
     const navigation = useNavigation();
     const insets = useSafeAreaInsets();
     const { adapter } = useFleetbase();
     const {
-        store: { issue },
+        store: { issue: issueFromStore },
     } = useTempStore();
-    const location = new Place({ id: issue.id, location: issue.location });
+
+    // Use route params as fallback if temp store is empty
+    const params = route?.params || {};
+    const issue = issueFromStore || params.issue;
+
+    // Debug logging
+    console.log('IssueScreen - route.params:', params);
+    console.log('IssueScreen - issue from tempStore:', issueFromStore);
+    console.log('IssueScreen - issue from params:', params.issue);
+    console.log('IssueScreen - final issue:', issue);
+    console.log('IssueScreen - issue.created_at:', issue?.created_at);
+
+    const location = issue ? new Place({ id: issue.id, location: issue.location }) : null;
     const [isLoading, setIsLoading] = useState(false);
+
+    // Safety check: if no issue data is available, show error or go back
+    if (!issue) {
+        return (
+            <YStack flex={1} bg='$background' justifyContent='center' alignItems='center'>
+                <Text color='$textPrimary' fontSize={18}>
+                    Issue not found
+                </Text>
+            </YStack>
+        );
+    }
 
     const handleDeleteIssue = useCallback(() => {
         const handleDelete = async () => {
@@ -53,7 +76,10 @@ const IssueScreen = () => {
                 <XStack space='$3'>
                     <HeaderButton
                         icon={faPenToSquare}
-                        onPress={() => navigation.navigate('EditIssue', { issue })}
+                        onPress={() => {
+                            console.log('IssueScreen - Navigating to EditIssue with issue:', issue);
+                            navigation.navigate('EditIssue', { issue });
+                        }}
                         bg='$info'
                         iconColor='$infoText'
                         borderWidth={1}
@@ -64,7 +90,8 @@ const IssueScreen = () => {
                 </XStack>
             </Portal>
             <LoadingOverlay visible={isLoading} text='Deleting Issue...' />
-            <YStack py='$3' space='$3'>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <YStack py='$3' space='$3'>
                 <XStack px='$3' alignItems='center' space='$3'>
                     <YStack alignItems='flex-start'>
                         <Text color='$textSecondary' fontSize={17} fontWeight='bold'>
@@ -149,7 +176,8 @@ const IssueScreen = () => {
                         <PlaceMapView place={location} width='100%' height={200} borderWidth={1} borderColor='$borderColor' />
                     </YStack>
                 </YStack>
-            </YStack>
+                </YStack>
+            </ScrollView>
         </YStack>
     );
 };

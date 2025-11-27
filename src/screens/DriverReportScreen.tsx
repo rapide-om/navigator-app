@@ -43,8 +43,9 @@ const DriverReportScreen = () => {
 
     const handleOpenIssue = useCallback(
         (issue) => {
+            console.log('DriverReportScreen - handleOpenIssue called with issue:', issue);
             setValue('issue', issue);
-            later(() => navigation.navigate('Issue'), 300);
+            later(() => navigation.navigate('Issue', { issue }), 300);
         },
         [navigation, setValue]
     );
@@ -52,7 +53,7 @@ const DriverReportScreen = () => {
     const handleOpenFuelReport = useCallback(
         (fuelReport) => {
             setValue('fuelReport', fuelReport);
-            later(() => navigation.navigate('FuelReport'), 300);
+            later(() => navigation.navigate('FuelReport', { fuelReport }), 300);
         },
         [navigation, setValue]
     );

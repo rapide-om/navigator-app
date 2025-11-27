@@ -283,16 +283,23 @@ const DriverReportTab = createNativeStackNavigator({
             options: ({ route, navigation }) => {
                 return {
                     presentation: 'modal',
-                    headerTitle: '',
-                    headerLeft: (props) => (
-                        <Text color='$textPrimary' fontSize={20} fontWeight='bold'>
-                            Create a new Fuel Report
-                        </Text>
+                    headerTitle: 'Create a new Fuel Report',
+                    headerTitleStyle: {
+                        color: getTheme('textPrimary'),
+                        fontSize: 20,
+                        fontWeight: 'bold',
+                    },
+                    headerLeft: () => null,
+                    headerBackVisible: false,
+                    gestureEnabled: true,
+                    headerRight: (props) => (
+                        <HeaderButton
+                            icon={faTimes}
+                            onPress={() => navigation.goBack()}
+                        />
                     ),
-                    headerRight: (props) => <HeaderButton icon={faTimes} onPress={() => navigation.goBack()} />,
                     headerStyle: {
                         backgroundColor: getTheme('background'),
-                        headerTintColor: getTheme('borderColor'),
                     },
                 };
             },
@@ -322,16 +329,15 @@ const DriverReportTab = createNativeStackNavigator({
         FuelReport: {
             screen: FuelReportScreen,
             options: ({ route, navigation }) => {
-                const {
-                    store: { fuelReport },
-                } = useTempStore();
+                const params = route.params || {};
+                const fuelReport = params.fuelReport;
 
                 return {
                     presentation: 'modal',
                     headerTitle: '',
                     headerLeft: (props) => (
                         <Text color='$textPrimary' fontSize={18} fontWeight='bold' numberOfLines={1}>
-                            {format(new Date(fuelReport.created_at), 'MMM dd, yyyy HH:mm')}
+                            {fuelReport?.created_at ? format(new Date(fuelReport.created_at), 'MMM dd, yyyy HH:mm') : 'Fuel Report'}
                         </Text>
                     ),
                     headerRight: (props) => <PortalHost name='FuelReportScreenHeaderRightPortal' />,
@@ -347,16 +353,23 @@ const DriverReportTab = createNativeStackNavigator({
             options: ({ route, navigation }) => {
                 return {
                     presentation: 'modal',
-                    headerTitle: '',
-                    headerLeft: (props) => (
-                        <Text color='$textPrimary' fontSize={20} fontWeight='bold'>
-                            Create a new Issue
-                        </Text>
+                    headerTitle: 'Create a new Issue',
+                    headerTitleStyle: {
+                        color: getTheme('textPrimary'),
+                        fontSize: 20,
+                        fontWeight: 'bold',
+                    },
+                    headerLeft: () => null,
+                    headerBackVisible: false,
+                    gestureEnabled: true,
+                    headerRight: (props) => (
+                        <HeaderButton
+                            icon={faTimes}
+                            onPress={() => navigation.goBack()}
+                        />
                     ),
-                    headerRight: (props) => <HeaderButton icon={faTimes} onPress={() => navigation.goBack()} />,
                     headerStyle: {
                         backgroundColor: getTheme('background'),
-                        headerTintColor: getTheme('borderColor'),
                     },
                 };
             },
@@ -367,12 +380,17 @@ const DriverReportTab = createNativeStackNavigator({
                 const params = route.params || {};
                 const issue = params.issue;
 
+                // Debug logging
+                console.log('EditIssue route.params:', params);
+                console.log('EditIssue issue object:', issue);
+                console.log('EditIssue issue.created_at:', issue?.created_at);
+
                 return {
                     presentation: 'modal',
                     headerTitle: '',
                     headerLeft: (props) => (
                         <Text color='$textPrimary' fontSize={18} fontWeight='bold' numberOfLines={1}>
-                            Edit Issue from {format(new Date(issue.created_at), 'MMM dd, yyyy HH:mm')}
+                            {issue?.created_at ? `Edit Issue from ${format(new Date(issue.created_at), 'MMM dd, yyyy HH:mm')}` : 'Edit Issue'}
                         </Text>
                     ),
                     headerRight: (props) => <HeaderButton icon={faTimes} onPress={() => navigation.goBack()} />,
@@ -386,16 +404,15 @@ const DriverReportTab = createNativeStackNavigator({
         Issue: {
             screen: IssueScreen,
             options: ({ route, navigation }) => {
-                const {
-                    store: { issue },
-                } = useTempStore();
+                const params = route.params || {};
+                const issue = params.issue;
 
                 return {
                     presentation: 'modal',
                     headerTitle: '',
                     headerLeft: (props) => (
                         <Text color='$textPrimary' fontSize={18} fontWeight='bold' numberOfLines={1}>
-                            {format(new Date(issue.created_at), 'MMM dd, yyyy HH:mm')}
+                            {issue?.created_at ? format(new Date(issue.created_at), 'MMM dd, yyyy HH:mm') : 'Issue'}
                         </Text>
                     ),
                     headerRight: (props) => <PortalHost name='IssueScreenHeaderRightPortal' />,

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Alert } from 'react-native';
+import { Alert, ScrollView } from 'react-native';
 import { Text, YStack, XStack, Button, Spinner, Separator, useTheme } from 'tamagui';
 import { Place } from '@fleetbase/sdk';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -17,16 +17,32 @@ import HeaderButton from '../components/HeaderButton';
 import PlaceMapView from '../components/PlaceMapView';
 import useFleetbase from '../hooks/use-fleetbase';
 
-const FuelReportScreen = () => {
+const FuelReportScreen = ({ route }) => {
     const theme = useTheme();
     const navigation = useNavigation();
     const insets = useSafeAreaInsets();
     const { adapter } = useFleetbase();
     const {
-        store: { fuelReport },
+        store: { fuelReport: fuelReportFromStore },
     } = useTempStore();
-    const location = new Place({ id: fuelReport.id, location: fuelReport.location });
+
+    // Use route params as fallback if temp store is empty
+    const params = route?.params || {};
+    const fuelReport = fuelReportFromStore || params.fuelReport;
+
+    const location = fuelReport ? new Place({ id: fuelReport.id, location: fuelReport.location }) : null;
     const [isLoading, setIsLoading] = useState(false);
+
+    // Safety check: if no fuelReport data is available, show error or go back
+    if (!fuelReport) {
+        return (
+            <YStack flex={1} bg='$background' justifyContent='center' alignItems='center'>
+                <Text color='$textPrimary' fontSize={18}>
+                    Fuel Report not found
+                </Text>
+            </YStack>
+        );
+    }
 
     const handleDeleteFuelReport = useCallback(() => {
         const handleDelete = async () => {
@@ -65,7 +81,8 @@ const FuelReportScreen = () => {
                 </XStack>
             </Portal>
             <LoadingOverlay visible={isLoading} text='Deleting Fuel Report...' />
-            <YStack py='$3' space='$3'>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <YStack py='$3' space='$3'>
                 <XStack px='$3' alignItems='center' space='$3'>
                     <YStack alignItems='flex-start'>
                         <Text color='$textSecondary' fontSize={17} fontWeight='bold'>
@@ -139,7 +156,8 @@ const FuelReportScreen = () => {
                         <PlaceMapView place={location} width='100%' height={200} borderWidth={1} borderColor='$borderColor' />
                     </YStack>
                 </YStack>
-            </YStack>
+                </YStack>
+            </ScrollView>
         </YStack>
     );
 };

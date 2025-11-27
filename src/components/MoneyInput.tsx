@@ -20,9 +20,9 @@ const MoneyInput = ({
     placeholder = 'Input amount',
     wrapperProps = {},
     portalHost = 'MainPortal',
-    onBottomSheetPositionChanged,
-    onBottomSheetOpened,
-    onBottomSheetClosed,
+    onBottomSheetPositionChanged = (isOpen, fromIndex, toIndex) => {},
+    onBottomSheetOpened = (isOpen, fromIndex, toIndex) => {},
+    onBottomSheetClosed = (isOpen, fromIndex, toIndex) => {},
 }) => {
     const theme = useTheme();
     const [selectedCurrency, setSelectedCurrency] = useState(defaultCurrency);
