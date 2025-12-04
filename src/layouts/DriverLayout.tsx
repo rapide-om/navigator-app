@@ -27,6 +27,42 @@ const DriverLayoutInner = ({ children, state, descriptors, navigation: tabNaviga
     const { addNotificationListener, removeNotificationListener } = useNotification();
     const { reloadActiveOrders } = useOrderManager();
 
+    // Handle tab press to reset navigation stack if already on that tab
+    useEffect(() => {
+        const unsubscribe = tabNavigation.addListener('tabPress', (e) => {
+            const tabState = tabNavigation.getState?.();
+            const currentTabRoute = tabState?.routes?.[tabState.index];
+            const targetRoute = state.routes[state.index];
+
+            // If we're pressing the currently active tab
+            if (currentTabRoute?.name === targetRoute?.name) {
+                const stackState = currentTabRoute?.state;
+
+                // If we're not on the root screen of the stack, navigate to root
+                if (stackState && stackState.index > 0) {
+                    e.preventDefault();
+
+                    // Get the root screen name based on the tab
+                    let rootScreen = 'DriverOrderManagement';
+                    if (targetRoute.name === 'DriverDashboardTab') {
+                        rootScreen = 'DriverDashboard';
+                    } else if (targetRoute.name === 'DriverReportTab') {
+                        rootScreen = 'DriverReport';
+                    } else if (targetRoute.name === 'DriverChatTab') {
+                        rootScreen = 'ChatHome';
+                    } else if (targetRoute.name === 'DriverAccountTab') {
+                        rootScreen = 'DriverProfile';
+                    }
+
+                    // Navigate to the root screen of the current tab
+                    tabNavigation.navigate(targetRoute.name, { screen: rootScreen });
+                }
+            }
+        });
+
+        return unsubscribe;
+    }, [tabNavigation, state]);
+
     useEffect(() => {
         if (!fleetbase) {
             return;

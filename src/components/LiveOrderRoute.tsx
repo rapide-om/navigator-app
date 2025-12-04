@@ -34,7 +34,14 @@ const calculateOffset = (zoomLevel) => {
 };
 
 const getPlaceCoords = (place) => {
+    if (!place) {
+        return null;
+    }
     const [latitude, longitude] = getCoordinates(place);
+    // Validate that coordinates are valid numbers
+    if (typeof latitude !== 'number' || typeof longitude !== 'number' || isNaN(latitude) || isNaN(longitude)) {
+        return null;
+    }
     return { latitude, longitude };
 };
 
@@ -106,15 +113,16 @@ const LiveOrderRoute = ({
     const destination = getPlaceCoords(end);
 
     // Get only the "middle" waypoints (excluding the first and last ones)
-    const middleWaypoints = focusCurrentDestination ? [] : waypoints.slice(1, -1).map((waypoint) => ({ coordinate: getPlaceCoords(waypoint), ...waypoint }));
+    const middleWaypoints = focusCurrentDestination ? [] : waypoints.slice(1, -1).map((waypoint) => ({ coordinate: getPlaceCoords(waypoint), ...waypoint })).filter((waypoint) => waypoint.coordinate !== null);
 
     // Adjust marker size if a bunch of middle waypoints
     markerSize = middleWaypoints.length > 0 ? (middleWaypoints > 3 ? 'xxs' : 'xs') : markerSize;
 
-    // Initial map props
+    // Initial map props - use origin if valid, otherwise use a default location
     const initialDeltas = calculateDeltas(zoom);
+    const defaultCoords = { latitude: 0, longitude: 0 };
     const [mapRegion, setMapRegion] = useState({
-        ...origin,
+        ...(origin || defaultCoords),
         latitudeDelta: initialDeltas,
         longitudeDelta: initialDeltas,
     });
@@ -160,7 +168,7 @@ const LiveOrderRoute = ({
                 {...mapViewProps}
             >
                 {driverAssigned && <DriverMarker driver={driverAssigned} onMovement={focusDriver} />}
-                {start && start?.id !== 'driver' && (
+                {start && start?.id !== 'driver' && origin && (
                     <Marker coordinate={origin} centerOffset={markerOffset}>
                         <MarkerLabel icon={start?.id === 'driver' ? faTruck : null} label={formattedAddressFromPlace(start)} markerOffset={markerOffset} theme={theme} />
                         <LocationMarker size={markerSize} />
@@ -172,10 +180,12 @@ const LiveOrderRoute = ({
                         <LocationMarker size={markerSize} />
                     </Marker>
                 ))}
-                <Marker coordinate={destination} centerOffset={markerOffset}>
-                    <MarkerLabel label={formattedAddressFromPlace(end)} markerOffset={{ width: 0, height: 5 }} theme={theme} />
-                    <LocationMarker size={markerSize} />
-                </Marker>
+                {destination && (
+                    <Marker coordinate={destination} centerOffset={markerOffset}>
+                        <MarkerLabel label={formattedAddressFromPlace(end)} markerOffset={{ width: 0, height: 5 }} theme={theme} />
+                        <LocationMarker size={markerSize} />
+                    </Marker>
+                )}
 
                 {origin && destination && (
                     <MapViewDirections
