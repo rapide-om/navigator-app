@@ -203,18 +203,12 @@ const DriverTaskTab = createNativeStackNavigator({
         Order: {
             screen: OrderScreen,
             options: ({ route, navigation }) => {
-                const order = route.params?.order;
                 return {
                     headerShown: true,
                     headerTitle: '',
                     headerBackVisible: true,
                     headerBackTitleVisible: false,
                     headerTintColor: getTheme('textPrimary'),
-                    headerRight: (props) => (
-                        <XStack alignItems='center' space='$2'>
-                            {order?.status && <Badge status={order.status} />}
-                        </XStack>
-                    ),
                     headerStyle: {
                         backgroundColor: getTheme('background'),
                     },
