@@ -3,6 +3,7 @@
  * https://facebook.github.io/metro/docs/configuration
  */
 const { getDefaultConfig } = require('@react-native/metro-config');
+const exclusionList = require('metro-config/src/defaults/exclusionList');
 
 module.exports = (async () => {
   const config = await getDefaultConfig(__dirname);
@@ -18,6 +19,17 @@ module.exports = (async () => {
       ...config.resolver,
       assetExts: config.resolver.assetExts.filter(ext => ext !== 'svg'),
       sourceExts: [...config.resolver.sourceExts, 'svg'],
+      // Exclude build directories from being watched
+      blockList: exclusionList([
+        /.*\/android\/build\/.*/,
+        /.*\/android\/\.gradle\/.*/,
+        /.*\/android\/app\/build\/.*/,
+        /.*\/android\/.*\/build\/.*/,
+        /.*\/ios\/build\/.*/,
+        /.*\/ios\/Pods\/.*/,
+        /.*\/node_modules\/.*\/android\/build\/.*/,
+        /.*\/node_modules\/.*\/ios\/build\/.*/,
+      ]),
     },
   };
 })();

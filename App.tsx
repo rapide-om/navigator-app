@@ -11,6 +11,7 @@ import { SocketClusterProvider } from './src/contexts/SocketClusterContext';
 import { ThemeProvider, useThemeContext } from './src/contexts/ThemeContext';
 import { ConfigProvider } from './src/contexts/ConfigContext';
 import AppNavigator from './src/navigation/AppNavigator';
+import ErrorBoundary from './ErrorBoundary';
 import config from './tamagui.config';
 
 function AppContent(): React.JSX.Element {
@@ -43,11 +44,13 @@ function AppContent(): React.JSX.Element {
 
 function App(): React.JSX.Element {
     return (
-        <PortalProvider>
-            <ThemeProvider>
-                <AppContent />
-            </ThemeProvider>
-        </PortalProvider>
+        <ErrorBoundary>
+            <PortalProvider>
+                <ThemeProvider>
+                    <AppContent />
+                </ThemeProvider>
+            </PortalProvider>
+        </ErrorBoundary>
     );
 }
 
