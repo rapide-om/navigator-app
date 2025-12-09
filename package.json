@@ -44,6 +44,8 @@
         "@react-native-camera-roll/camera-roll": "^7.10.0",
         "@react-native-community/blur": "^4.4.1",
         "@react-native-community/datetimepicker": "^8.2.0",
+        "@react-native-firebase/app": "^23.5.0",
+        "@react-native-firebase/messaging": "^23.5.0",
         "@react-native-google-signin/google-signin": "latest",
         "@react-navigation/bottom-tabs": "^7.0.1",
         "@react-navigation/elements": "^2.0.0",

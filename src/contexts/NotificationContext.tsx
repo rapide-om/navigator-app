@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { PermissionsAndroid, Platform } from 'react-native';
 import { Notifications } from 'react-native-notifications';
+import messaging from '@react-native-firebase/messaging';
 import useStorage from '../hooks/use-storage';
 
 const requestAndroidNotificationPermission = async () => {
@@ -33,8 +34,56 @@ export const NotificationProvider = ({ children }) => {
 
     useEffect(() => {
         const registerRemoteNotifications = async () => {
-            await requestAndroidNotificationPermission();
-            Notifications.registerRemoteNotifications();
+            console.log('[NotificationContext] Starting FCM registration...');
+            console.log('[NotificationContext] Platform:', Platform.OS, 'Version:', Platform.Version);
+
+            const granted = await requestAndroidNotificationPermission();
+            console.log('[NotificationContext] Notification permission granted:', granted);
+
+            if (granted) {
+                console.log('[NotificationContext] Calling Notifications.registerRemoteNotifications()...');
+                Notifications.registerRemoteNotifications();
+
+                // Also try Android-specific method
+                if (Platform.OS === 'android') {
+                    console.log('[NotificationContext] Also calling Android.registerRemoteNotifications()...');
+                    try {
+                        Notifications.android.registerRemoteNotifications();
+                    } catch (err) {
+                        console.error('[NotificationContext] Android-specific registration error:', err);
+                    }
+                }
+
+                // Check if registration was successful after a delay
+                setTimeout(async () => {
+                    try {
+                        const isRegistered = await Notifications.isRegisteredForRemoteNotifications();
+                        console.log('[NotificationContext] Is registered for remote notifications:', isRegistered);
+
+                        // If registered but no token received via callback, manually fetch it using Firebase
+                        if (isRegistered && !deviceToken) {
+                            console.log('[NotificationContext] ⚠️ Registered but token callback never fired. Manually fetching token via Firebase Messaging...');
+
+                            try {
+                                const fcmToken = await messaging().getToken();
+                                if (fcmToken) {
+                                    console.log('[NotificationContext] ✅ Got FCM token from Firebase Messaging!');
+                                    console.log('[NotificationContext] Token:', fcmToken);
+                                    setDeviceToken(fcmToken);
+                                } else {
+                                    console.error('[NotificationContext] ❌ Firebase Messaging returned null token');
+                                }
+                            } catch (error) {
+                                console.error('[NotificationContext] ❌ Error fetching token from Firebase Messaging:', error);
+                            }
+                        }
+                    } catch (err) {
+                        console.error('[NotificationContext] Failed to check registration status:', err);
+                    }
+                }, 2000);
+            } else {
+                console.warn('[NotificationContext] Notification permission denied - FCM token will not be registered');
+            }
         };
 
         registerRemoteNotifications();
@@ -64,13 +113,16 @@ export const NotificationProvider = ({ children }) => {
 
         // Remote notifications registered successfully
         const registeredListener = Notifications.events().registerRemoteNotificationsRegistered((event) => {
+            console.log('[NotificationContext] ✅ FCM Token Received!');
+            console.log('[NotificationContext] Token:', event.deviceToken);
             setDeviceToken(event.deviceToken);
-            console.log('Device registered for remote notifications:', event.deviceToken);
         });
 
         // Failed to register for remote notifications
         const registrationFailedListener = Notifications.events().registerRemoteNotificationsRegistrationFailed((error) => {
-            console.warn('Failed to register for remote notifications:', error);
+            console.error('[NotificationContext] ❌ FCM Registration Failed!');
+            console.error('[NotificationContext] Error:', error);
+            console.error('[NotificationContext] Error details:', JSON.stringify(error, null, 2));
         });
 
         // Clean up listeners on unmount

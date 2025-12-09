@@ -182,8 +182,11 @@ export const AuthProvider = ({ children }) => {
     // Register driver's device and platform
     const syncDevice = async (driver, token) => {
         try {
+            console.log('[AuthContext] Syncing device token...', { driverId: driver?.id, platform: Platform.OS, hasToken: !!token });
             await driver.syncDevice({ token, platform: Platform.OS });
+            console.log('[AuthContext] Device token synced successfully');
         } catch (err) {
+            console.error('[AuthContext] Failed to sync device token:', err);
             throw err;
         }
     };
@@ -191,8 +194,10 @@ export const AuthProvider = ({ children }) => {
     // Register current state driver's device and platform
     const registerDevice = async (token) => {
         try {
+            console.log('[AuthContext] Registering device...', { hasDriver: !!state.driver, hasToken: !!token });
             await syncDevice(state.driver, token);
         } catch (err) {
+            console.error('[AuthContext] Failed to register device:', err);
             throw err;
         }
     };
@@ -295,7 +300,12 @@ export const AuthProvider = ({ children }) => {
 
         // Sync the driver device
         if (deviceToken) {
-            syncDevice(instance, deviceToken);
+            console.log('[AuthContext] createDriverSession - Syncing device token immediately');
+            syncDevice(instance, deviceToken).catch((err) => {
+                console.error('[AuthContext] createDriverSession - Failed to sync device token (will retry via useEffect):', err);
+            });
+        } else {
+            console.log('[AuthContext] createDriverSession - No device token available yet, will sync when token is received');
         }
 
         organizationsLoadedRef.current = false;
@@ -368,13 +378,17 @@ export const AuthProvider = ({ children }) => {
         });
     }, [setDriver]);
 
-    // // Sync device token if it changes
-    // // Test on IOS before adding
-    // useEffect(() => {
-    //     if (deviceToken && state.driver) {
-    //         syncDevice(state.driver, deviceToken);
-    //     }
-    // }, [deviceToken, state.driver]);
+    // Sync device token if it changes
+    useEffect(() => {
+        if (deviceToken && state.driver) {
+            console.log('[AuthContext] Device token changed, syncing with backend...', { hasToken: !!deviceToken, hasDriver: !!state.driver });
+            syncDevice(state.driver, deviceToken).catch((err) => {
+                console.error('[AuthContext] Failed to sync device token in useEffect:', err);
+            });
+        } else {
+            console.log('[AuthContext] Skipping device sync:', { hasToken: !!deviceToken, hasDriver: !!state.driver });
+        }
+    }, [deviceToken, state.driver]);
 
     // Memoize useful props and methods
     const value = useMemo(
