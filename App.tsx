@@ -4,6 +4,7 @@ import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TamaguiProvider, Theme } from 'tamagui';
+import { Toasts } from '@backpackapp-io/react-native-toast';
 import { AuthProvider } from './src/contexts/AuthContext';
 import { LanguageProvider } from './src/contexts/LanguageContext';
 import { NotificationProvider } from './src/contexts/NotificationContext';
@@ -29,6 +30,7 @@ function AppContent(): React.JSX.Element {
                                         <AuthProvider>
                                             <SocketClusterProvider>
                                                 <AppNavigator />
+                                                <Toasts />
                                             </SocketClusterProvider>
                                         </AuthProvider>
                                     </LanguageProvider>

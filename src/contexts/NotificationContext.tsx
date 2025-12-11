@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useRef } from 'r
 import { PermissionsAndroid, Platform } from 'react-native';
 import { Notifications } from 'react-native-notifications';
 import messaging from '@react-native-firebase/messaging';
+import { toast as reactNativeToast, ToastPosition } from '@backpackapp-io/react-native-toast';
 import useStorage from '../hooks/use-storage';
 
 const requestAndroidNotificationPermission = async () => {
@@ -88,9 +89,74 @@ export const NotificationProvider = ({ children }) => {
 
         registerRemoteNotifications();
 
-        // Foreground notification handler
+        // FCM Foreground message handler (CRITICAL for receiving FCM messages when app is open)
+        const unsubscribeForegroundMessages = messaging().onMessage(async (remoteMessage) => {
+            console.log('[NotificationContext] FCM message received in foreground:', remoteMessage);
+
+            // Convert FCM message to notification format
+            const notification = {
+                payload: remoteMessage.data || {},
+                title: remoteMessage.notification?.title,
+                body: remoteMessage.notification?.body,
+                ...remoteMessage,
+            };
+
+            setLastNotification(notification);
+            setNotifications((prev) => [...prev, notification]);
+
+            // Notify all listeners
+            notificationListeners.current.forEach((listener) => listener(notification, 'received'));
+
+            // Display the notification when app is in foreground
+            if (remoteMessage.notification) {
+                // Show a toast notification to the user
+                const notificationTitle = remoteMessage.notification.title || 'Notification';
+                const notificationBody = remoteMessage.notification.body || '';
+
+                console.log('[NotificationContext] Showing toast notification...');
+                reactNativeToast(`${notificationTitle}\n${notificationBody}`, {
+                    duration: 4000,
+                    position: ToastPosition.TOP,
+                    styles: {
+                        view: {
+                            backgroundColor: '#4391EA',
+                            borderWidth: 1,
+                            borderColor: '#3580D9',
+                            borderRadius: 7,
+                            paddingVertical: 12,
+                            paddingHorizontal: 16,
+                            marginTop: 50,
+                        },
+                        text: {
+                            color: '#FFFFFF',
+                            fontSize: 14,
+                            fontWeight: '500',
+                        },
+                    },
+                });
+                console.log('[NotificationContext] Toast notification called');
+
+                // Also post a local notification for the notification tray
+                try {
+                    Notifications.postLocalNotification({
+                        identifier: remoteMessage.messageId || `fcm-${Date.now()}`,
+                        body: remoteMessage.notification.body || '',
+                        title: remoteMessage.notification.title || '',
+                        sound: 'default',
+                        badge: 1,
+                        type: '',
+                        thread: '',
+                        payload: remoteMessage.data || {},
+                    });
+                } catch (error) {
+                    console.error('[NotificationContext] Error posting local notification:', error);
+                }
+            }
+        });
+
+        // Foreground notification handler (for local notifications)
         const notificationDisplayedListener = Notifications.events().registerNotificationReceivedForeground((notification, completion) => {
-            console.log('Notification received in foreground:', notification);
+            console.log('[NotificationContext] Local notification received in foreground:', notification);
             setLastNotification(notification);
             setNotifications((prev) => [...prev, notification]);
 
@@ -102,7 +168,7 @@ export const NotificationProvider = ({ children }) => {
 
         // Notification opened handler
         const notificationOpenedListener = Notifications.events().registerNotificationOpened((notification, completion, action) => {
-            console.log('Notification opened:', notification);
+            console.log('[NotificationContext] Notification opened:', notification);
             setLastNotification(notification);
 
             // Notify all listeners (optional, based on use case)
@@ -127,6 +193,7 @@ export const NotificationProvider = ({ children }) => {
 
         // Clean up listeners on unmount
         return () => {
+            unsubscribeForegroundMessages();
             notificationDisplayedListener.remove();
             notificationOpenedListener.remove();
             registeredListener.remove();

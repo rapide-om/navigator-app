@@ -104,33 +104,38 @@ const DriverLayoutInner = ({ children, state, descriptors, navigation: tabNaviga
             }
 
             if (typeof id === 'string' && id.startsWith('order_')) {
-                // Reload active orders
+                // Always reload active orders when order notification is received
                 reloadActiveOrders();
 
-                try {
-                    const order = await fleetbase.orders.findRecord(id);
-                    const orderId = order.id;
-                    const { tabName, screenName, screenParams } = getCurrentScreen(tabNavigation);
+                // Only navigate when notification is opened (tapped), not just received
+                if (action === 'opened') {
+                    try {
+                        const order = await fleetbase.orders.findRecord(id);
+                        const orderId = order.id;
+                        const { tabName, screenName, screenParams } = getCurrentScreen(tabNavigation);
 
-                    const isOnDriverTaskTab = tabName === 'DriverTaskTab';
-                    const isOrderModalOpen = screenName === 'OrderModal' && screenParams?.order?.id === orderId;
+                        const isOnDriverTaskTab = tabName === 'DriverTaskTab';
+                        const isOrderModalOpen = screenName === 'OrderModal' && screenParams?.order?.id === orderId;
 
-                    if (!isOnDriverTaskTab) {
-                        tabNavigation.navigate('DriverTaskTab', { screen: 'DriverOrderManagement' });
+                        if (!isOnDriverTaskTab) {
+                            tabNavigation.navigate('DriverTaskTab', { screen: 'DriverOrderManagement' });
+                        }
+
+                        if (!isOrderModalOpen) {
+                            later(() => {
+                                tabNavigation.navigate('DriverTaskTab', {
+                                    screen: 'OrderModal',
+                                    params: { order: order.serialize() },
+                                });
+                            }, 100);
+                        } else {
+                            console.log('[Navigation] Order modal already open for this order.');
+                        }
+                    } catch (err) {
+                        console.warn('Error navigating to order:', err);
                     }
-
-                    if (!isOrderModalOpen) {
-                        later(() => {
-                            tabNavigation.navigate('DriverTaskTab', {
-                                screen: 'OrderModal',
-                                params: { order: order.serialize() },
-                            });
-                        }, 100);
-                    } else {
-                        console.log('[Navigation] Order modal already open for this order.');
-                    }
-                } catch (err) {
-                    console.warn('Error navigating to order:', err);
+                } else {
+                    console.log('[Navigation] Order notification received but not opened - showing toast only');
                 }
             }
         };

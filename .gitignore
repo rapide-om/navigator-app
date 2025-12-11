@@ -94,3 +94,4 @@ navigator.config.js
 .tamagui
 vendor
 *.pxd
+android/app/.cxx
