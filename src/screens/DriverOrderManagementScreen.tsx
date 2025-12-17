@@ -61,6 +61,8 @@ const DriverOrderManagementScreen = () => {
         reloadNearbyOrders,
         dismissedOrders,
         setDimissedOrders,
+        addUnviewedOrder,
+        shouldReloadForOrder,
     } = useOrderManager();
     const { listen } = useSocketClusterClient();
     const { addNotificationListener, removeNotificationListener } = useNotification();
@@ -118,9 +120,20 @@ const DriverOrderManagementScreen = () => {
     useFocusEffect(
         useCallback(() => {
             const listenForOrderUpdates = async () => {
-                const listener = await listen(`driver.${driver.id}`, ({ event }) => {
+                const listener = await listen(`driver.${driver.id}`, ({ event, data }) => {
                     if (typeof event === 'string' && event === 'order.ready') {
-                        reloadCurrentOrders();
+                        // Check if the incoming order is for the currently selected date
+                        if (data && shouldReloadForOrder(data)) {
+                            // Order is for current date, reload current orders
+                            reloadCurrentOrders();
+                        } else if (data) {
+                            // Order is for a future date, add to unviewed and reload active orders
+                            addUnviewedOrder(data);
+                            reloadActiveOrders({}, { setLoadingFlag: false });
+                        } else {
+                            // Fallback: no data provided, reload everything
+                            reloadCurrentOrders();
+                        }
                     }
                     if (typeof event === 'string' && event === 'order.ping') {
                         reloadNearbyOrders();
@@ -138,7 +151,7 @@ const DriverOrderManagementScreen = () => {
                     listenerRef.current.stop();
                 }
             };
-        }, [listen, driver.id])
+        }, [listen, driver.id, shouldReloadForOrder, addUnviewedOrder, reloadCurrentOrders, reloadActiveOrders, reloadNearbyOrders])
     );
 
     const handleAdhocDismissal = useCallback(
