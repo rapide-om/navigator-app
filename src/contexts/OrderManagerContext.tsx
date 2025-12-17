@@ -36,6 +36,8 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
     const [ordersToday, setOrdersToday] = useStorage(`${driver?.id}_${today.replaceAll('-', '')}_orders`, []);
     // Dismissed adhoc orders
     const [dismissedOrders, setDimissedOrders] = useState([]);
+    // Track unviewed orders by date (for visual indicators on calendar)
+    const [unviewedOrdersByDate, setUnviewedOrdersByDate] = useStorage(`${driver?.id}_unviewed_orders_by_date`, {});
 
     const [isFetchingActiveOrders, setIsFetchingActiveOrders] = useState(false);
     const [isFetchingRecentOrders, setIsFetchingRecentOrders] = useState(false);
@@ -54,7 +56,9 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
     const activeOrderMarkedDates = useMemo(() => {
         // Group orders by formatted date string (e.g., "2025-03-06")
         const ordersGroupedByDate = allActiveOrders.reduce((acc, order) => {
-            const dateKey = format(new Date(order.created_at), 'yyyy-MM-dd');
+            // Use scheduled_at if available, otherwise fall back to created_at
+            const orderDate = order.scheduled_at ? new Date(order.scheduled_at) : new Date(order.created_at);
+            const dateKey = format(orderDate, 'yyyy-MM-dd');
             if (!acc[dateKey]) {
                 acc[dateKey] = [];
             }
@@ -63,14 +67,18 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
         }, {});
 
         // Map each group into the required format
-        return Object.entries(ordersGroupedByDate).map(([date, orders]) => ({
-            date: new Date(date),
-            dots: orders.map(() => ({
-                color: theme['$red-600'].val,
-                // You can optionally add selectedColor here if needed
-            })),
-        }));
-    }, [allActiveOrders, theme]);
+        return Object.entries(ordersGroupedByDate).map(([date, orders]) => {
+            const hasUnviewedOrders = unviewedOrdersByDate[date] && unviewedOrdersByDate[date].length > 0;
+
+            return {
+                date: new Date(date),
+                dots: orders.map(() => ({
+                    color: hasUnviewedOrders ? theme['$orange-500'].val : theme['$red-600'].val,
+                    // Orange dot indicates new unviewed orders, red is just active orders
+                })),
+            };
+        });
+    }, [allActiveOrders, unviewedOrdersByDate, theme]);
 
     // Generic function to query orders from Fleetbase API
     const queryOrders = useCallback(
@@ -280,6 +288,60 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
         [fetchNearbyOrders]
     );
 
+    // Helper function to add an order to unviewed orders for a specific date
+    const addUnviewedOrder = useCallback(
+        (order) => {
+            const orderDate = order.scheduled_at ? new Date(order.scheduled_at) : new Date(order.created_at);
+            const dateKey = format(orderDate, 'yyyy-MM-dd');
+
+            setUnviewedOrdersByDate((prev) => {
+                const currentUnviewed = prev[dateKey] || [];
+                // Only add if not already in the list
+                if (!currentUnviewed.includes(order.id)) {
+                    return {
+                        ...prev,
+                        [dateKey]: [...currentUnviewed, order.id],
+                    };
+                }
+                return prev;
+            });
+        },
+        [setUnviewedOrdersByDate]
+    );
+
+    // Helper function to clear unviewed orders for a specific date
+    const clearUnviewedOrdersForDate = useCallback(
+        (date) => {
+            const dateKey = format(new Date(date), 'yyyy-MM-dd');
+            setUnviewedOrdersByDate((prev) => {
+                const updated = { ...prev };
+                delete updated[dateKey];
+                return updated;
+            });
+        },
+        [setUnviewedOrdersByDate]
+    );
+
+    // Helper function to check if an order should reload current orders
+    const shouldReloadForOrder = useCallback(
+        (order) => {
+            // Get the order's scheduled date, fall back to created date
+            const orderDate = order.scheduled_at ? new Date(order.scheduled_at) : new Date(order.created_at);
+            const orderDateKey = format(orderDate, 'yyyy-MM-dd');
+            const currentDateKey = format(new Date(currentDate), 'yyyy-MM-dd');
+
+            return orderDateKey === currentDateKey;
+        },
+        [currentDate]
+    );
+
+    // Clear unviewed orders when user navigates to a date
+    useEffect(() => {
+        if (currentDate) {
+            clearUnviewedOrdersForDate(currentDate);
+        }
+    }, [currentDate, clearUnviewedOrdersForDate]);
+
     const value = useMemo(
         () => ({
             queryOrders,
@@ -304,6 +366,9 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
             reloadNearbyOrders,
             dismissedOrders,
             setDimissedOrders,
+            addUnviewedOrder,
+            shouldReloadForOrder,
+            unviewedOrdersByDate,
         }),
         [
             queryOrders,
@@ -324,6 +389,9 @@ export const OrderManagerProvider: React.FC = ({ children }) => {
             reloadNearbyOrders,
             dismissedOrders,
             setDimissedOrders,
+            addUnviewedOrder,
+            shouldReloadForOrder,
+            unviewedOrdersByDate,
         ]
     );
 
