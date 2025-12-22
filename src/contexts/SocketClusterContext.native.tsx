@@ -1,4 +1,13 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+
+// Debug: Check if setImmediate exists BEFORE importing socketcluster-client
+if (typeof global.setImmediate === 'undefined') {
+    console.error('[SocketClusterContext] CRITICAL: setImmediate is undefined before socketcluster-client import!');
+    console.error('[SocketClusterContext] global keys:', Object.keys(global).filter(k => k.includes('Immediate')));
+} else {
+    console.log('[SocketClusterContext] ✓ setImmediate exists before socketcluster-client import');
+}
+
 import socketClusterClient from 'socketcluster-client';
 import { consumeAsyncIterator } from '../utils';
 import { useConfig } from './ConfigContext';

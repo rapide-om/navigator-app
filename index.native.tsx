@@ -1,6 +1,5 @@
 // index.native.tsx
-// CRITICAL: Polyfills must be imported FIRST before anything else
-import './polyfills';
+// Note: rn-polyfills.js is loaded in index.js BEFORE this file
 
 import { AppRegistry } from 'react-native';
 import App from './App';
