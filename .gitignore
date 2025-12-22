@@ -35,6 +35,9 @@ android/.kotlin
 *.aab
 *.apk
 android/app/src/main/assets/index.android.bundle
+# CMake build files (generated on every build)
+android/app/.cxx/
+.cxx/
 
 # node.js
 #
