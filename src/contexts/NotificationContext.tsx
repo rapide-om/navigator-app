@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
-import { PermissionsAndroid, Platform } from 'react-native';
+import { PermissionsAndroid, Platform, View, Text, Image, StyleSheet } from 'react-native';
 import { Notifications } from 'react-native-notifications';
 import messaging from '@react-native-firebase/messaging';
 import { toast as reactNativeToast, ToastPosition } from '@backpackapp-io/react-native-toast';
@@ -114,23 +114,40 @@ export const NotificationProvider = ({ children }) => {
                 const notificationBody = remoteMessage.notification.body || '';
 
                 console.log('[NotificationContext] Showing toast notification...');
-                reactNativeToast(`${notificationTitle}\n${notificationBody}`, {
+
+                // Create custom notification content with icon
+                const NotificationContent = () => (
+                    <View style={notificationStyles.container}>
+                        <Image
+                            source={require('../assets/rapide-icon.png')}
+                            style={notificationStyles.icon}
+                        />
+                        <View style={notificationStyles.textContainer}>
+                            <View style={notificationStyles.headerRow}>
+                                <Text style={notificationStyles.appName}>Rapide</Text>
+                            </View>
+                            <Text style={notificationStyles.title}>{notificationTitle}</Text>
+                            <Text style={notificationStyles.body}>{notificationBody}</Text>
+                        </View>
+                    </View>
+                );
+
+                reactNativeToast(<NotificationContent />, {
                     duration: 4000,
                     position: ToastPosition.TOP,
                     styles: {
                         view: {
-                            backgroundColor: '#4391EA',
-                            borderWidth: 1,
-                            borderColor: '#3580D9',
-                            borderRadius: 7,
-                            paddingVertical: 12,
+                            backgroundColor: '#4A5568',
+                            borderRadius: 12,
+                            paddingVertical: 14,
                             paddingHorizontal: 16,
                             marginTop: 50,
-                        },
-                        text: {
-                            color: '#FFFFFF',
-                            fontSize: 14,
-                            fontWeight: '500',
+                            marginHorizontal: 16,
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 5,
                         },
                     },
                 });
@@ -213,3 +230,42 @@ export const useNotification = () => {
     }
     return context;
 };
+
+const notificationStyles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+    },
+    icon: {
+        width: 40,
+        height: 40,
+        borderRadius: 8,
+        marginRight: 12,
+    },
+    textContainer: {
+        flex: 1,
+    },
+    headerRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 4,
+    },
+    appName: {
+        fontSize: 13,
+        fontWeight: '600',
+        color: '#FFFFFF',
+        opacity: 0.9,
+    },
+    title: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: '#FFFFFF',
+        marginBottom: 4,
+    },
+    body: {
+        fontSize: 14,
+        color: '#FFFFFF',
+        opacity: 0.85,
+        lineHeight: 18,
+    },
+});
