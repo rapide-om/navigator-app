@@ -119,7 +119,7 @@ export const NotificationProvider = ({ children }) => {
                 const NotificationContent = () => (
                     <View style={notificationStyles.container}>
                         <Image
-                            source={require('../assets/rapide-icon.png')}
+                            source={require('../../assets/rapide-icon.png')}
                             style={notificationStyles.icon}
                         />
                         <View style={notificationStyles.textContainer}>
