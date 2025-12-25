@@ -5,9 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import { LangPicker, SearchButton } from 'components';
 import { useDriver, useFleetbase, useLocale } from 'hooks';
 import React, { useCallback, useState } from 'react';
-import { ImageBackground, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, Switch, Text, TouchableOpacity, View, Image } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import packageJson from '../../../package.json';
 import tailwind from 'tailwind';
 import { config, logError, toBoolean, translate } from 'utils';
 
@@ -43,8 +42,6 @@ const DefaultHeader = (props) => {
 
     const shouldDisplayLogoText = (displayLogoText ?? config('ui.headerComponent.displayLogoText')) === true;
 
-    const appVersion = packageJson.version;
-
     const toggleOnline = useCallback(() => {
         setIsLoading(true);
         setIsOnline(!isOnline);
@@ -73,9 +70,9 @@ const DefaultHeader = (props) => {
                             </TouchableOpacity>
                         )}
                         {shouldDisplayLogoText && (
-                            <View>
-                                <Text style={[tailwind('font-bold text-lg text-gray-50'), props.logoStyle ?? {}]}>Navigator</Text>
-                                <Text style={[tailwind('text-xs text-white')]}>{appVersion}</Text>
+                            <View style={tailwind('flex flex-row items-center')}>
+                                <Image source={require('../../../assets/rapide-icon.png')} style={tailwind('w-10 h-10 rounded-lg mr-2')} />
+                                <Text style={[tailwind('font-bold text-lg text-gray-50'), props.logoStyle ?? {}]}>Rapide</Text>
                             </View>
                         )}
                     </View>
