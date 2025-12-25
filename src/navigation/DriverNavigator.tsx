@@ -116,7 +116,7 @@ function createTabScreens() {
     const screenTabs = {};
     for (let i = 0; i < tabs.length; i++) {
         const tab = tabs[i];
-        if (tab) {
+        if (tab && screens[tab]) {
             screenTabs[tab] = screens[tab];
         }
     }
