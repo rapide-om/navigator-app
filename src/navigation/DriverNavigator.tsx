@@ -75,7 +75,7 @@ function getTabConfig(name, key, defaultValue = null) {
 }
 
 function createTabScreens() {
-    const tabs = toArray(navigatorConfig('driverNavigator.tabs', 'DriverDashboardTab,DriverTaskTab,DriverReportTab,DriverChatTab,DriverAccountTab'));
+    const tabs = toArray(navigatorConfig('driverNavigator.tabs', 'DriverDashboardTab,DriverTaskTab,DriverReportTab,DriverAccountTab'));
     const screens = {
         DriverDashboardTab: {
             screen: DriverDashboardTab,
@@ -97,12 +97,12 @@ function createTabScreens() {
                 };
             },
         },
-        DriverChatTab: {
-            screen: DriverChatTab,
-            options: {
-                tabBarLabel: config('DRIVER_CHAT_TAB_LABEL', 'Chat'),
-            },
-        },
+        // DriverChatTab: {
+        //     screen: DriverChatTab,
+        //     options: {
+        //         tabBarLabel: config('DRIVER_CHAT_TAB_LABEL', 'Chat'),
+        //     },
+        // },
         DriverAccountTab: {
             screen: DriverAccountTab,
             options: () => {
