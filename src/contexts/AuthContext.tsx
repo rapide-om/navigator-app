@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useMemo, useEffect, useCa
 import { Platform } from 'react-native';
 import { EventRegister } from 'react-native-event-listeners';
 import { Driver } from '@fleetbase/sdk';
-import { later, isArray, navigatorConfig } from '../utils';
+import { navigatorConfig } from '../utils';
 import useStorage, { storage } from '../hooks/use-storage';
 import useFleetbase from '../hooks/use-fleetbase';
 import { useLanguage } from './LanguageContext';
@@ -21,6 +21,8 @@ const authReducer = (state, action) => {
             return { ...state, phone: action.phone, isSendingCode: action.isSendingCode ?? false };
         case 'VERIFY':
             return { ...state, driver: action.driver, isVerifyingCode: action.isVerifyingCode ?? false };
+        case 'LOGOUT_START':
+            return { ...state, isSigningOut: true };
         case 'LOGOUT':
             return { ...state, driver: null, phone: null, isSigningOut: action.isSigningOut ?? false };
         case 'START_UPDATE':
@@ -362,9 +364,10 @@ export const AuthProvider = ({ children }) => {
 
     // Logout: Clear session
     const logout = useCallback(() => {
-        dispatch({ type: 'LOGOUT', isSigningOut: true });
+        // Start logout process
+        dispatch({ type: 'LOGOUT_START' });
 
-        // Remove driver session
+        // Remove driver session immediately to trigger navigation
         setDriver(null);
 
         // Clear storage/ cache
@@ -373,9 +376,10 @@ export const AuthProvider = ({ children }) => {
         // Reset locale
         setLocale(navigatorConfig('defaultLocale', 'en'));
 
-        later(() => {
+        // Complete logout after navigation settles
+        setTimeout(() => {
             dispatch({ type: 'LOGOUT', isSigningOut: false });
-        });
+        }, 300);
     }, [setDriver]);
 
     // Sync device token if it changes

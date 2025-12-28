@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { Pressable, FlatList, RefreshControl } from 'react-native';
 import { Text, YStack, XStack, Button, Separator, Image, useTheme } from 'tamagui';
@@ -229,6 +229,11 @@ const DriverReportScreen = () => {
             loadFuelReports();
         }, [adapter])
     );
+
+    // Don't render if no driver
+    if (!driver) {
+        return null;
+    }
 
     return (
         <YStack flex={1} bg='$background'>

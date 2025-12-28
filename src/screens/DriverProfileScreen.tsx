@@ -53,6 +53,8 @@ const DriverProfileScreen = () => {
     }, [organizations]);
 
     const menuItems = useMemo(() => {
+        if (!driver) return [];
+
         const items = [
             { id: '1', title: 'Account', screen: 'DriverAccount' },
             {
@@ -68,9 +70,9 @@ const DriverProfileScreen = () => {
         ];
 
         return items.filter((item) => !item.hidden);
-    }, [driver]);
+    }, [driver, handleSelectOrganization]);
 
-    const renderMenuItem = ({ item }) => (
+    const renderMenuItem = useCallback(({ item }) => (
         <Pressable
             onPress={() => handlePressMenuItem(item)}
             style={({ pressed }) => ({
@@ -92,7 +94,12 @@ const DriverProfileScreen = () => {
                 <FontAwesomeIcon icon={faChevronRight} size={16} color={theme.textSecondary.val} />
             </XStack>
         </Pressable>
-    );
+    ), [handlePressMenuItem, theme]);
+
+    // Don't render if no driver
+    if (!driver) {
+        return null;
+    }
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.background.val }}>

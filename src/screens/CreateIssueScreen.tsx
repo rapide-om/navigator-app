@@ -34,8 +34,13 @@ const CreateIssueScreen = () => {
                 setIsLoading(false);
             }
         },
-        [adapter, liveLocation, navigation]
+        [adapter, liveLocation, navigation, driver]
     );
+
+    // Don't render if no driver
+    if (!driver) {
+        return null;
+    }
 
     return (
         <YStack flex={1} bg='$background'>

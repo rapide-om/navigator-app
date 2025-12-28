@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView, FlatList, Pressable, ScrollView, Platform, Linking } from 'react-native';
 import { Spinner, Avatar, Text, YStack, XStack, Separator, Button, useTheme } from 'tamagui';
@@ -22,15 +22,26 @@ const DriverAccountScreen = () => {
     const { driver, logout, isSigningOut, updateDriver } = useAuth();
     const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
 
-    const handleClearCache = () => {
+    const handleClearCache = useCallback(() => {
         storage.clearStore();
         toast.success(t('AccountScreen.cacheCleared'), { position: ToastPosition.BOTTOM });
-    };
+    }, [t]);
 
-    const handleSignout = () => {
+    const handleSignout = useCallback(() => {
+        // Clear auth state first
         logout();
+
+        // Show toast
         toast.success(t('AccountScreen.signedOut'));
-    };
+
+        // Navigate to Boot which will redirect to Login
+        setTimeout(() => {
+            navigation.reset({
+                index: 0,
+                routes: [{ name: 'Boot' as never }],
+            });
+        }, 100);
+    }, [logout, t, navigation]);
 
     const handleOpenTermsOfService = async () => {
         const url = 'https://www.fleetbase.io/terms';
@@ -198,77 +209,81 @@ const DriverAccountScreen = () => {
     );
 
     // Account menu items
-    const accountMenu = [
-        {
-            title: t('AccountScreen.profilePhoto'),
-            rightComponent: isUploadingPhoto ? (
-                <Spinner color='$textPrimary' />
-            ) : (
-                <Avatar circular size='$2'>
-                    <Avatar.Image src={driver.getAttribute('photo_url')} />
-                    <Avatar.Fallback backgroundColor='$primary'>
-                        <Text color='$white' fontWeight='bold'>
-                            {abbreviateName(driver.getAttribute('name'))}
-                        </Text>
-                    </Avatar.Fallback>
-                </Avatar>
-            ),
-            onPress: () => handleChangeProfilePhoto(),
-        },
-        {
-            title: t('AccountScreen.email'),
-            rightComponent: (
-                <Text color='$textSecondary' opacity={0.5}>
-                    {driver.getAttribute('email')}
-                </Text>
-            ),
-            onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.email'), key: 'email', component: 'input' } }),
-        },
-        {
-            title: t('AccountScreen.phoneNumber'),
-            rightComponent: (
-                <Text color='$textSecondary' opacity={0.5}>
-                    {driver.getAttribute('phone')}
-                </Text>
-            ),
-            onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.phoneNumber'), key: 'phone', component: 'phone-input' } }),
-        },
-        {
-            title: t('AccountScreen.name'),
-            rightComponent: (
-                <Text color='$textSecondary' opacity={0.5}>
-                    {driver.getAttribute('name')}
-                </Text>
-            ),
-            onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.name'), key: 'name', component: 'input' } }),
-        },
-        {
-            title: 'Language',
-            rightComponent: (
-                <Text color='$textSecondary' opacity={0.5}>
-                    {language.native}
-                </Text>
-            ),
-            onPress: handleLanguageSelect,
-        },
-        {
-            title: t('AccountScreen.theme'),
-            rightComponent: (
-                <Text color='$textSecondary' opacity={0.5}>
-                    {titleize(userColorScheme)}
-                </Text>
-            ),
-            onPress: handleSelectScheme,
-        },
-        {
-            title: t('AccountScreen.termsOfService'),
-            rightComponent: null,
-            onPress: handleOpenTermsOfService,
-        },
-    ];
+    const accountMenu = useMemo(() => {
+        if (!driver) return [];
+
+        return [
+            {
+                title: t('AccountScreen.profilePhoto'),
+                rightComponent: isUploadingPhoto ? (
+                    <Spinner color='$textPrimary' />
+                ) : (
+                    <Avatar circular size='$2'>
+                        <Avatar.Image src={driver.getAttribute('photo_url')} />
+                        <Avatar.Fallback backgroundColor='$primary'>
+                            <Text color='$white' fontWeight='bold'>
+                                {abbreviateName(driver.getAttribute('name'))}
+                            </Text>
+                        </Avatar.Fallback>
+                    </Avatar>
+                ),
+                onPress: () => handleChangeProfilePhoto(),
+            },
+            {
+                title: t('AccountScreen.email'),
+                rightComponent: (
+                    <Text color='$textSecondary' opacity={0.5}>
+                        {driver.getAttribute('email')}
+                    </Text>
+                ),
+                onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.email'), key: 'email', component: 'input' } }),
+            },
+            {
+                title: t('AccountScreen.phoneNumber'),
+                rightComponent: (
+                    <Text color='$textSecondary' opacity={0.5}>
+                        {driver.getAttribute('phone')}
+                    </Text>
+                ),
+                onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.phoneNumber'), key: 'phone', component: 'phone-input' } }),
+            },
+            {
+                title: t('AccountScreen.name'),
+                rightComponent: (
+                    <Text color='$textSecondary' opacity={0.5}>
+                        {driver.getAttribute('name')}
+                    </Text>
+                ),
+                onPress: () => navigation.navigate('EditAccountProperty', { property: { name: t('AccountScreen.name'), key: 'name', component: 'input' } }),
+            },
+            {
+                title: 'Language',
+                rightComponent: (
+                    <Text color='$textSecondary' opacity={0.5}>
+                        {language.native}
+                    </Text>
+                ),
+                onPress: handleLanguageSelect,
+            },
+            {
+                title: t('AccountScreen.theme'),
+                rightComponent: (
+                    <Text color='$textSecondary' opacity={0.5}>
+                        {titleize(userColorScheme)}
+                    </Text>
+                ),
+                onPress: handleSelectScheme,
+            },
+            {
+                title: t('AccountScreen.termsOfService'),
+                rightComponent: null,
+                onPress: handleOpenTermsOfService,
+            },
+        ];
+    }, [driver, t, isUploadingPhoto, handleChangeProfilePhoto, navigation, language, handleLanguageSelect, userColorScheme, handleSelectScheme, handleOpenTermsOfService]);
 
     // Data Protection menu items
-    const dataProtectionMenu = [
+    const dataProtectionMenu = useMemo(() => [
         {
             title: t('AccountScreen.privacyPolicy'),
             rightComponent: null,
@@ -284,7 +299,12 @@ const DriverAccountScreen = () => {
         //     rightComponent: <Text color='$textSecondary'>Enabled</Text>, // Replace with dynamic value if available
         //     onPress: () => navigation.navigate('TrackingSettings'),
         // },
-    ];
+    ], [t, handleOpenPrivacyPolicy, handleClearCache]);
+
+    // Don't render if no driver
+    if (!driver) {
+        return null;
+    }
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.background.val }}>
@@ -330,7 +350,7 @@ const DriverAccountScreen = () => {
                         />
                     </YStack>
                     <YStack padding='$4' mb='$5'>
-                        <Button marginTop='$4' bg='$error' borderWidth={1} borderColor='$errorBorder' size='$5' onPress={handleSignout} rounded width='100%'>
+                        <Button marginTop='$4' bg='$error' borderWidth={1} borderColor='$errorBorder' size='$5' onPress={handleSignout} borderRadius='$4' width='100%'>
                             <Button.Icon>{isSigningOut ? <Spinner color={theme['$errorText'].val} /> : <YStack />}</Button.Icon>
                             <Button.Text color='$errorText' fontWeight='bold'>
                                 {t('AccountScreen.signOut')}

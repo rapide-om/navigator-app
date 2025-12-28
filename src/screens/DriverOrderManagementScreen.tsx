@@ -119,6 +119,8 @@ const DriverOrderManagementScreen = () => {
 
     useFocusEffect(
         useCallback(() => {
+            if (!driver) return;
+
             const listenForOrderUpdates = async () => {
                 const listener = await listen(`driver.${driver.id}`, ({ event, data }) => {
                     if (typeof event === 'string' && event === 'order.ready') {
@@ -232,6 +234,11 @@ const DriverOrderManagementScreen = () => {
             </YStack>
         );
     };
+
+    // Don't render if no driver
+    if (!driver) {
+        return null;
+    }
 
     return (
         <YStack flex={1} bg='$surface'>
