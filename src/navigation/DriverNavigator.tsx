@@ -48,7 +48,6 @@ import DriverOnlineToggle from '../components/DriverOnlineToggle';
 import BackButton from '../components/BackButton';
 import HeaderButton from '../components/HeaderButton';
 import Badge from '../components/Badge';
-import DeviceInfo from 'react-native-device-info';
 
 const isAndroid = Platform.OS === 'android';
 const importedIconsMap = {
@@ -514,14 +513,11 @@ const DriverNavigator = createBottomTabNavigator({
             headerLeft: (props) => (
                 <View pl='$3'>
                     <XStack alignItems='center'>
-                        <Image source={require('../../assets/navigator-icon-transparent.png')} style={{ width: 18, height: 18, marginRight: 5 }} />
+                        <Image source={require('../../assets/rapide-icon.png')} style={{ width: 24, height: 24, marginRight: 8, borderRadius: 6 }} />
                         <Text color='$textPrimary' fontSize={20} fontWeight='bold'>
-                            Navigator
+                            Rapide
                         </Text>
                     </XStack>
-                    <Text color='$textSecondary' fontSize={8} ml={25}>
-                        v{DeviceInfo.getVersion()} #{DeviceInfo.getBuildNumber()}
-                    </Text>
                 </View>
             ),
             headerRight: (props) => (
