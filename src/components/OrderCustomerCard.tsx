@@ -1,10 +1,24 @@
 import { YStack, XStack, Text, Avatar, Separator, Button, useTheme } from 'tamagui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faPhone, faEnvelope, faMessage } from '@fortawesome/free-solid-svg-icons';
-import FastImage from 'react-native-fast-image';
+import { faPhone, faMessage } from '@fortawesome/free-solid-svg-icons';
+import { Linking } from 'react-native';
 
 const OrderCustomerCard = ({ customer }) => {
     const theme = useTheme();
+
+    const handleCall = () => {
+        if (customer.phone) {
+            Linking.openURL(`tel:${customer.phone}`);
+        }
+    };
+
+    const handleWhatsApp = () => {
+        if (customer.phone) {
+            // Remove any non-numeric characters from phone number
+            const phoneNumber = customer.phone.replace(/[^0-9]/g, '');
+            Linking.openURL(`whatsapp://send?phone=${phoneNumber}`);
+        }
+    };
 
     return (
         <YStack space='$2' borderWidth={1} borderColor='$borderColor' borderRadius='$4'>
@@ -21,7 +35,6 @@ const OrderCustomerCard = ({ customer }) => {
                         </Text>
                         <YStack>
                             {customer.phone && <Text color='$textSecondary'>{customer.phone}</Text>}
-                            {customer.email && <Text color='$textSecondary'>{customer.email}</Text>}
                         </YStack>
                     </YStack>
                 </XStack>
@@ -29,19 +42,13 @@ const OrderCustomerCard = ({ customer }) => {
             <Separator />
             <YStack px='$3' py='$2'>
                 <XStack space='$3'>
-                    <Button bg='$info' size='$3' borderWidth={1} borderColor='$infoBorder'>
+                    <Button bg='$info' size='$3' borderWidth={1} borderColor='$infoBorder' onPress={handleCall}>
                         <Button.Icon>
                             <FontAwesomeIcon icon={faPhone} color={theme.infoText.val} />
                         </Button.Icon>
                         <Button.Text color='$infoText'>Call</Button.Text>
                     </Button>
-                    <Button bg='$info' size='$3' borderWidth={1} borderColor='$infoBorder'>
-                        <Button.Icon>
-                            <FontAwesomeIcon icon={faEnvelope} color={theme.infoText.val} />
-                        </Button.Icon>
-                        <Button.Text color='$infoText'>Email</Button.Text>
-                    </Button>
-                    <Button bg='$info' size='$3' borderWidth={1} borderColor='$infoBorder'>
+                    <Button bg='$info' size='$3' borderWidth={1} borderColor='$infoBorder' onPress={handleWhatsApp}>
                         <Button.Icon>
                             <FontAwesomeIcon icon={faMessage} color={theme.infoText.val} />
                         </Button.Icon>
