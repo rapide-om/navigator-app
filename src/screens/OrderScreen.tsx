@@ -327,7 +327,16 @@ const OrderScreen = ({ route }) => {
             setLoadingOverlayMessage(`Updating Activity: ${activity._resolved_status ?? activity.status}`);
 
             try {
-                const updatedOrder = await runWithLoading(order.updateActivity({ activity, proof: proof?.id }), 'activityUpdate');
+                // Build update params including reason if provided
+                const updateParams: any = { activity, proof: proof?.id };
+                if (activity.reason) {
+                    updateParams.reason = activity.reason;
+                }
+                if (activity.customReason) {
+                    updateParams.custom_reason = activity.customReason;
+                }
+
+                const updatedOrder = await runWithLoading(order.updateActivity(updateParams), 'activityUpdate');
                 updateOrder(updatedOrder);
                 setNextActivity([]);
                 setLoadingOverlayMessage(null);
