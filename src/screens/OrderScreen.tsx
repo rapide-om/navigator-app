@@ -279,8 +279,6 @@ const OrderScreen = ({ route }) => {
     );
 
     const updateOrderActivity = useCallback(async () => {
-        activitySheetRef.current?.openBottomSheet();
-
         try {
             const activity = await runWithLoading(order.getNextActivity({ waypoint: destination?.id }), 'nextOrderActivity');
             if (activity.code === 'dispatched') {
@@ -306,6 +304,8 @@ const OrderScreen = ({ route }) => {
             }
 
             setNextActivity(activity);
+            // Open bottom sheet only after activities are loaded
+            activitySheetRef.current?.openBottomSheet();
         } catch (err) {
             console.warn('Error fetching next activity for order:', err);
         }
