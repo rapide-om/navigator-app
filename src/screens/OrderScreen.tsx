@@ -31,7 +31,7 @@ import PlaceCard from '../components/PlaceCard';
 import OrderItems from '../components/OrderItems';
 import OrderTotal from '../components/OrderTotal';
 import OrderWaypointList from '../components/OrderWaypointList';
-import OrderPayloadEntities from '../components/OrderPayloadEntities';
+import OrderPackages from '../components/OrderPackages';
 import OrderDocumentFiles from '../components/OrderDocumentFiles';
 import OrderCustomerCard from '../components/OrderCustomerCard';
 import OrderProgressBar from '../components/OrderProgressBar';
@@ -658,10 +658,8 @@ const OrderScreen = ({ route }) => {
                 <YStack>
                     <OrderProofOfDelivery order={order} />
                 </YStack>
-                <SectionHeader title='Order Payload' />
-                <YStack>
-                    <OrderPayloadEntities order={order} onPress={({ entity, waypoint }) => navigation.navigate('Entity', { entity, waypoint })} />
-                </YStack>
+                <SectionHeader title='Packages' />
+                <OrderPackages order={order} />
                 {order.isAttributeFilled('customer') && (
                     <>
                         <SectionHeader title='Customer' />
