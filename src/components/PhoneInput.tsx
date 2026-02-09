@@ -52,22 +52,27 @@ const PhoneInput = ({ value, onChange, bg, width = '100%', defaultCountryCode = 
 
     const openBottomSheet = () => {
         phoneInputRef.current?.blur();
-        bottomSheetRef.current?.collapse();
-        searchInputRef.current?.focus();
+        Keyboard.dismiss();
+        bottomSheetRef.current?.expand();
     };
 
     const closeBottomSheet = () => {
         Keyboard.dismiss();
         bottomSheetRef.current?.close();
-        phoneInputRef.current?.focus();
     };
 
     const handleInputFocus = () => {
         bottomSheetRef.current?.close();
     };
 
-    const handleCountrySelect = (country: { code: string; phone: string }) => {
-        setSelectedCountry(country);
+    const handleCountrySelect = (country: { code: string; phone: number | string; name?: string; emoji?: string }) => {
+        const normalizedCountry = {
+            code: country.code,
+            phone: typeof country.phone === 'number' ? String(country.phone) : country.phone,
+            name: country.name,
+            emoji: country.emoji,
+        };
+        setSelectedCountry(normalizedCountry);
         closeBottomSheet();
     };
 
@@ -120,63 +125,59 @@ const PhoneInput = ({ value, onChange, bg, width = '100%', defaultCountryCode = 
                     enableDynamicSizing={false}
                     enablePanDownToClose={true}
                     enableOverDrag={false}
-                    style={{ flex: 1, width: '100%' }}
-                    backgroundStyle={{ backgroundColor: theme.background.val, borderWidth: 1, borderColor: theme.borderColorWithShadow.val }}
+                    backgroundStyle={{ backgroundColor: theme.background.val }}
                     handleIndicatorStyle={{ backgroundColor: theme.secondary.val }}
                 >
-                    <YStack px='$2'>
-                        <BottomSheetTextInput
-                            ref={searchInputRef}
-                            placeholder='Search country'
-                            onChangeText={setSearchTerm}
-                            autoCapitalize={false}
-                            autoComplete='off'
-                            autoCorrect={false}
-                            style={{
-                                color: theme.textPrimary.val,
-                                backgroundColor: theme.surface.val,
-                                borderWidth: 1,
-                                borderColor: theme.borderColor.val,
-                                padding: 14,
-                                borderRadius: 12,
-                                fontSize: 13,
-                                marginBottom: 10,
-                            }}
-                        />
-                    </YStack>
-                    <BottomSheetView
-                        style={{ flex: 1, backgroundColor: theme.background.val, paddingHorizontal: 8, borderColor: theme.borderColorWithShadow.val, borderWidth: 1, borderTopWidth: 0 }}
-                    >
-                        <BottomSheetFlatList
-                            data={filteredCountries}
-                            keyExtractor={(item) => item.code}
-                            renderItem={({ item }) => (
-                                <Button
-                                    size='$4'
-                                    onPress={() => handleCountrySelect({ code: item.code, phone: item.phone })}
-                                    bg='$surface'
-                                    justifyContent='space-between'
-                                    space='$2'
-                                    mb='$2'
-                                    px='$3'
-                                    hoverStyle={{
-                                        scale: 0.9,
-                                        opacity: 0.5,
+                    <BottomSheetFlatList
+                        data={filteredCountries}
+                        keyExtractor={(item) => item.code}
+                        ListHeaderComponent={
+                            <YStack px='$3' pb='$2'>
+                                <BottomSheetTextInput
+                                    ref={searchInputRef}
+                                    placeholder='Search country'
+                                    onChangeText={setSearchTerm}
+                                    autoCapitalize='none'
+                                    autoComplete='off'
+                                    autoCorrect={false}
+                                    style={{
+                                        color: theme.textPrimary.val,
+                                        backgroundColor: theme.surface.val,
+                                        borderWidth: 1,
+                                        borderColor: theme.borderColor.val,
+                                        padding: 14,
+                                        borderRadius: 12,
+                                        fontSize: 15,
+                                        marginBottom: 10,
                                     }}
-                                    pressStyle={{
-                                        scale: 0.9,
-                                        opacity: 0.5,
-                                    }}
-                                >
-                                    <XStack alignItems='center' space='$2'>
-                                        <Text>{item.emoji}</Text>
-                                        <Text>{item.name}</Text>
-                                    </XStack>
-                                    <Text>+{item.phone}</Text>
-                                </Button>
-                            )}
-                        />
-                    </BottomSheetView>
+                                />
+                            </YStack>
+                        }
+                        contentContainerStyle={{ paddingHorizontal: 12, paddingBottom: 20 }}
+                        renderItem={({ item }) => (
+                            <Button
+                                size='$4'
+                                onPress={() => handleCountrySelect(item)}
+                                bg='$surface'
+                                justifyContent='space-between'
+                                mb='$2'
+                                px='$3'
+                                borderRadius='$3'
+                                hoverStyle={{
+                                    opacity: 0.7,
+                                }}
+                                pressStyle={{
+                                    opacity: 0.7,
+                                }}
+                            >
+                                <XStack alignItems='center' gap='$3'>
+                                    <Text fontSize={20}>{item.emoji}</Text>
+                                    <Text color='$textPrimary'>{item.name}</Text>
+                                </XStack>
+                                <Text color='$textSecondary'>+{item.phone}</Text>
+                            </Button>
+                        )}
+                    />
                 </BottomSheet>
             </Portal>
         </YStack>

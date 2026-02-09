@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import { PortalHost } from '@gorhom/portal';
 import InstanceLinkHandler from '../components/InstanceLinkHandler';
 
 const AppLayout = ({ children, state, descriptors, navigation: tabNavigation }) => {
@@ -6,6 +7,7 @@ const AppLayout = ({ children, state, descriptors, navigation: tabNavigation }) 
         <>
             <View style={{ width: '100%', height: '100%', flex: 1 }}>{children}</View>
             <InstanceLinkHandler />
+            <PortalHost name='MainPortal' />
         </>
     );
 };
